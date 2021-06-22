@@ -66,19 +66,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Login\DataUser.xaml.cs">
+    <Compile Include="User\DataUser.xaml.cs">
       <DependentUpon>DataUser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Login\WindowTime.xaml.cs">
+    <Compile Include="RegisterAdmin\Other\WindowTime.xaml.cs">
       <DependentUpon>WindowTime.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PersonasAdmin\EmployeeT\AddEmployee.xaml.cs">
+    <Compile Include="PersonAdmin\EmployeeT\AddEmployee.xaml.cs">
       <DependentUpon>AddEmployee.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PersonasAdmin\EmployeeT\EditEmployee.xaml.cs">
+    <Compile Include="PersonAdmin\EmployeeT\EditEmployee.xaml.cs">
       <DependentUpon>EditEmployee.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PersonasAdmin\EmployeeT\ViewEmployeeDetails.xaml.cs">
+    <Compile Include="PersonAdmin\EmployeeT\ViewEmployeeDetails.xaml.cs">
       <DependentUpon>ViewEmployeeDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegisterAdmin\RestorePassword\ChangePassword.xaml.cs">
@@ -87,10 +87,10 @@
     <Compile Include="RegisterAdmin\RestorePassword\WindowRestorePassword.xaml.cs">
       <DependentUpon>WindowRestorePassword.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RegisterAdmin\WindowLogin.xaml.cs">
+    <Compile Include="RegisterAdmin\Login\WindowLogin.xaml.cs">
       <DependentUpon>WindowLogin.xaml</DependentUpon>
     </Compile>
-    <Page Include="AboutAdmin\uscAbout1.xaml">
+    <Page Include="AboutAdmin\uscAbout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,20 +98,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Login\DataUser.xaml">
+    <Page Include="User\DataUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Login\WindowTime.xaml">
+    <Page Include="RegisterAdmin\Other\WindowTime.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="PrincipalAdmin\PrincipalView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AboutAdmin\uscAbout1.xaml.cs">
-      <DependentUpon>uscAbout1.xaml</DependentUpon>
+    <Compile Include="AboutAdmin\uscAbout.xaml.cs">
+      <DependentUpon>uscAbout.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -120,67 +120,59 @@
     <Compile Include="HomeAdmin\uscHome.xaml.cs">
       <DependentUpon>uscHome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="PrincipalAdmin\PrincipalView.xaml.cs">
+      <DependentUpon>PrincipalView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PartsAdmin\AddParts.xaml">
+    <Page Include="PartsAdmin\AllParts\AddParts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PartsAdmin\AddPartsType.xaml">
+    <Page Include="PartsAdmin\AllPartsType\AddPartsType.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PartsAdmin\EditPart.xaml">
+    <Page Include="PartsAdmin\AllParts\EditParts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PartsAdmin\EditPartsType.xaml">
+    <Page Include="PartsAdmin\AllPartsType\EditPartsType.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PartsAdmin\uscParts.xaml">
+    <Page Include="PartsAdmin\AllParts\uscViewAllParts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PartsAdmin\uscPartsEdit.xaml">
+    <Page Include="PartsAdmin\AllPartsType\uscPartsType.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PartsAdmin\uscPartsType.xaml">
+    <Page Include="PartsAdmin\AllParts\ViewPartsInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PartsAdmin\uscViewParts1.xaml">
+    <Page Include="PartsAdmin\AllPartsType\ViewsPartsType.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PartsAdmin\ViewParts.xaml">
+    <Page Include="PersonAdmin\EmployeeT\AddEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PartsAdmin\ViewsPartsType.xaml">
+    <Page Include="PersonAdmin\EmployeeT\EditEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PersonasAdmin\EmployeeT\AddEmployee.xaml">
+    <Page Include="PersonAdmin\EmployeeT\ViewEmployeeDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PersonasAdmin\EmployeeT\EditEmployee.xaml">
+    <Page Include="PersonAdmin\ClientT\uscClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PersonasAdmin\EmployeeT\ViewEmployeeDetails.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PersonasAdmin\uscClient.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PersonasAdmin\EmployeeT\uscViewEmployee.xaml">
+    <Page Include="PersonAdmin\EmployeeT\uscViewEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,46 +184,40 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RegisterAdmin\WindowLogin.xaml">
+    <Page Include="RegisterAdmin\Login\WindowLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PartsAdmin\AddParts.xaml.cs">
+    <Compile Include="PartsAdmin\AllParts\AddParts.xaml.cs">
       <DependentUpon>AddParts.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PartsAdmin\AddPartsType.xaml.cs">
+    <Compile Include="PartsAdmin\AllPartsType\AddPartsType.xaml.cs">
       <DependentUpon>AddPartsType.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PartsAdmin\EditPart.xaml.cs">
-      <DependentUpon>EditPart.xaml</DependentUpon>
+    <Compile Include="PartsAdmin\AllParts\EditParts.xaml.cs">
+      <DependentUpon>EditParts.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PartsAdmin\EditPartsType.xaml.cs">
+    <Compile Include="PartsAdmin\AllPartsType\EditPartsType.xaml.cs">
       <DependentUpon>EditPartsType.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PartsAdmin\uscParts.xaml.cs">
-      <DependentUpon>uscParts.xaml</DependentUpon>
+    <Compile Include="PartsAdmin\AllParts\uscViewAllParts.xaml.cs">
+      <DependentUpon>uscViewAllParts.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PartsAdmin\uscPartsEdit.xaml.cs">
-      <DependentUpon>uscPartsEdit.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PartsAdmin\uscPartsType.xaml.cs">
+    <Compile Include="PartsAdmin\AllPartsType\uscPartsType.xaml.cs">
       <DependentUpon>uscPartsType.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PartsAdmin\uscViewParts1.xaml.cs">
-      <DependentUpon>uscViewParts1.xaml</DependentUpon>
+    <Compile Include="PartsAdmin\AllParts\ViewPartsInfo.xaml.cs">
+      <DependentUpon>ViewPartsInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PartsAdmin\ViewParts.xaml.cs">
-      <DependentUpon>ViewParts.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PartsAdmin\ViewsPartsType.xaml.cs">
+    <Compile Include="PartsAdmin\AllPartsType\ViewsPartsType.xaml.cs">
       <DependentUpon>ViewsPartsType.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PersonasAdmin\uscClient.xaml.cs">
+    <Compile Include="PersonAdmin\ClientT\uscClient.xaml.cs">
       <DependentUpon>uscClient.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PersonasAdmin\EmployeeT\uscViewEmployee.xaml.cs">
+    <Compile Include="PersonAdmin\EmployeeT\uscViewEmployee.xaml.cs">
       <DependentUpon>uscViewEmployee.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -271,73 +257,61 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Login\usuarioVacio.jpg" />
-    <Resource Include="Login\image\usuarioVacio.jpg" />
-    <Resource Include="PersonasAdmin\EmployeeT\iconoVacio.png" />
-    <Resource Include="PersonasAdmin\EmployeeT\EMPLOYE2.jpg" />
-    <Resource Include="PersonasAdmin\EmployeeT\EMPLOYE1.jpg" />
-    <Resource Include="PersonasAdmin\image\iconoVacio.png" />
-    <Resource Include="RegisterAdmin\RestorePassword\logo2Recurso 75.png" />
-    <Resource Include="RegisterAdmin\RestorePassword\logo2Recurso 96.png" />
+    <Resource Include="User\image\usuarioVacio.jpg" />
+    <Resource Include="PersonAdmin\image\EMPLOYE2.jpg" />
+    <Resource Include="PersonAdmin\image\EMPLOYE1.jpg" />
+    <Resource Include="PersonAdmin\image\iconoVacio.png" />
+    <Resource Include="RegisterAdmin\image\logo2Recurso 75.png" />
     <Resource Include="RegisterAdmin\image\autoNet_blanco_letra.png" />
     <Resource Include="RegisterAdmin\image\logo2Recurso 96.png" />
-    <Resource Include="Login\R.Gifs\time3.gif" />
-    <Resource Include="Login\R.Gifs\time2.gif" />
-    <Resource Include="Login\R.Gifs\time.gif" />
-    <Resource Include="RegisterAdmin\R.Gifs\nutgif.gif" />
-    <Resource Include="RegisterAdmin\R.Gifs\nuts.gif" />
-    <Resource Include="RegisterAdmin\R.Gifs\nuts2.gif" />
-    <Resource Include="images\nuts.gif" />
-    <Resource Include="RegisterAdmin\fondoTuercas.jpg" />
-    <Resource Include="RegisterAdmin\fondo.jpg" />
-    <Resource Include="RegisterAdmin\fondo_desenfoque.jpg" />
-    <Resource Include="RegisterAdmin\fondo1.jpg" />
-    <Resource Include="RegisterAdmin\fondo2.jpg" />
-    <Resource Include="RegisterAdmin\1.jpg" />
-    <Resource Include="PartsAdmin\employee.jpg" />
-    <Resource Include="PartsAdmin\rodamientos.png" />
-    <Resource Include="PersonasAdmin\usuarioVacio.jpg" />
-    <Resource Include="PersonasAdmin\employee.jpg" />
-    <Resource Include="PartsAdmin\fondo1.jpg" />
-    <Resource Include="PartsAdmin\fondo2_desenfoque.jpg" />
-    <Resource Include="PartsAdmin\fondo2.jpg" />
-    <Resource Include="PartsAdmin\fondo_desenfoque.jpg" />
-    <Resource Include="PartsAdmin\fondoTuercas_desenfoque.jpg" />
-    <Resource Include="PartsAdmin\fondoTuercas.jpg" />
-    <Resource Include="PartsAdmin\logo2Recurso 12logoBalnco.png" />
-    <Resource Include="images\logo2Recurso 12logoBalnco.png" />
-    <Resource Include="logo2Recurso 11logoletra.png" />
-    <Resource Include="logo2Recurso 10logo.png" />
-    <Resource Include="images\logo2Recurso 11logoletra.png" />
-    <Resource Include="images\logo2Recurso 10logo.png" />
-    <Resource Include="logo2Recurso 85.png" />
-    <Resource Include="logo2Recurso 75.png" />
-    <Resource Include="logo2Recurso 96.png" />
-    <Resource Include="images\logo2Recurso 85.png" />
-    <Resource Include="images\logo2Recurso 96.png" />
-    <Resource Include="images\logo2Recurso 75.png" />
-    <Resource Include="images\logo2Recurso 64.png" />
-    <Resource Include="images\logo2Recurso 54.png" />
-    <Resource Include="images\autoNet_blanco_letra.png" />
-    <Resource Include="images\autoNet_blanco.png" />
-    <Resource Include="autoNet_blanco_letra.png" />
-    <Resource Include="AboutAdmin\logo2Recurso 10logo.png" />
+    <Resource Include="RegisterAdmin\gif\time3.gif" />
+    <Resource Include="User\R.Gifs\time2.gif" />
+    <Resource Include="User\R.Gifs\time.gif" />
+    <Resource Include="RegisterAdmin\gif\nutgif.gif" />
+    <Resource Include="RegisterAdmin\gif\nuts.gif" />
+    <Resource Include="RegisterAdmin\gif\nuts2.gif" />
+    <Resource Include="PrincipalAdmin\image\nuts.gif" />
+    <Resource Include="RegisterAdmin\image\fondoTuercas.jpg" />
+    <Resource Include="RegisterAdmin\image\fondo.jpg" />
+    <Resource Include="RegisterAdmin\image\fondo_desenfoque.jpg" />
+    <Resource Include="RegisterAdmin\image\fondo1.jpg" />
+    <Resource Include="RegisterAdmin\image\fondo2.jpg" />
+    <Resource Include="RegisterAdmin\image\1.jpg" />
+    <Resource Include="PartsAdmin\image\employee.jpg" />
+    <Resource Include="PartsAdmin\image\rodamientos.png" />
+    <Resource Include="PersonAdmin\image\usuarioVacio.jpg" />
+    <Resource Include="PersonAdmin\image\employee.jpg" />
+    <Resource Include="PartsAdmin\image\fondo1.jpg" />
+    <Resource Include="PartsAdmin\image\fondo2_desenfoque.jpg" />
+    <Resource Include="PartsAdmin\image\fondo2.jpg" />
+    <Resource Include="PartsAdmin\image\fondo_desenfoque.jpg" />
+    <Resource Include="PartsAdmin\image\fondoTuercas_desenfoque.jpg" />
+    <Resource Include="PartsAdmin\image\fondoTuercas.jpg" />
+    <Resource Include="PartsAdmin\image\logo2Recurso 12logoBalnco.png" />
+    <Resource Include="PrincipalAdmin\image\logo2Recurso 12logoBalnco.png" />
+    <Resource Include="PrincipalAdmin\image\logo2Recurso 11logoletra.png" />
+    <Resource Include="PrincipalAdmin\image\logo2Recurso 10logo.png" />
+    <Resource Include="PrincipalAdmin\image\logo2Recurso 85.png" />
+    <Resource Include="PrincipalAdmin\image\logo2Recurso 96.png" />
+    <Resource Include="PrincipalAdmin\image\logo2Recurso 75.png" />
+    <Resource Include="PrincipalAdmin\image\logo2Recurso 64.png" />
+    <Resource Include="PrincipalAdmin\image\logo2Recurso 54.png" />
+    <Resource Include="PrincipalAdmin\image\autoNet_blanco_letra.png" />
+    <Resource Include="PrincipalAdmin\image\autoNet_blanco.png" />
+    <Resource Include="AboutAdmin\image\logo2Recurso 10logo.png" />
     <Resource Include="HomeAdmin\image\fondo.jpg" />
-    <Resource Include="HomeAdmin\fondo.jpg" />
-    <Resource Include="HomeAdmin\coche.png" />
-    <Resource Include="HomeAdmin\empleado.png" />
-    <Resource Include="HomeAdmin\cliente.png" />
-    <Resource Include="HomeAdmin\cliente2.png" />
-    <Resource Include="HomeAdmin\ventas.png" />
-    <Resource Include="HomeAdmin\part2.png" />
-    <Resource Include="HomeAdmin\bugias.jpg" />
-    <Resource Include="HomeAdmin\lla.png" />
-    <Resource Include="HomeAdmin\rodamientos.jpg" />
-    <Content Include="images\autoNet.png" />
+    <Resource Include="HomeAdmin\image\coche.png" />
+    <Resource Include="HomeAdmin\image\empleado.png" />
+    <Resource Include="HomeAdmin\image\cliente.png" />
+    <Resource Include="HomeAdmin\image\cliente2.png" />
+    <Resource Include="HomeAdmin\image\ventas.png" />
+    <Resource Include="HomeAdmin\image\part2.png" />
+    <Resource Include="HomeAdmin\image\bugias.jpg" />
+    <Resource Include="HomeAdmin\image\lla.png" />
+    <Resource Include="HomeAdmin\image\rodamientos.jpg" />
+    <Content Include="PrincipalAdmin\image\autoNet.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
