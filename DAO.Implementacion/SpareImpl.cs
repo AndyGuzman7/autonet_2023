@@ -31,7 +31,7 @@ namespace DAO.Implementacion
 
         public int Insert(Spare t)
         {
-            string query = @"INSERT INTO Spare (description, nameProduct, currentBalance, basePrice,    weight, productCode, idFactory, idSpareType, idEmployee, dateUpdate)
+            string query = @"INSERT INTO Spare (description, 'nameProduct', currentBalance, basePrice,    weight, productCode, idFactory, idSpareType, idEmployee, dateUpdate)
                                             VALUES (@description, @nameProduct, @currentBalance, @basePrice, @weight, @productCode, @idFactory ,@idSpareType, @idEmployee, CURRENT_TIMESTAMP )";
             try
             {

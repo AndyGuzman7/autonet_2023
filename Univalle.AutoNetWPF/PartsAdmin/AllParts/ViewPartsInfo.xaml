@@ -14,93 +14,124 @@
              TextOptions.TextRenderingMode="Auto"
              materialDesign:ShadowAssist.ShadowDepth="Depth3"
              
-             FontFamily="{DynamicResource MaterialDesignFont}" WindowStyle="None" Loaded="Window_Loaded" Height="600" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" AllowsTransparency="True">
-    <materialDesign:Card UniformCornerRadius="20" Height="500" Width="900">
-        <materialDesign:TransitioningContent >
-            <materialDesign:TransitioningContent.OpeningEffects>
-                <materialDesign:TransitionEffect Kind="FadeIn" />
-                <materialDesign:TransitionEffect Kind="SlideInFromBottom" />
-            </materialDesign:TransitioningContent.OpeningEffects>
-            <Grid   Height="500" Width="900" Margin="10" Background="{x:Null}"  >
-                <Border CornerRadius="15" Margin="10" Background="White"  >
-                    <Grid  Margin="20">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="1.3*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid    Grid.ColumnSpan="2">
-                            <StackPanel  Orientation="Horizontal"  HorizontalAlignment="Right" Margin="0,0,10,0.4" Width="820" >
-                                <Button x:Name="btnEditar"  BorderBrush="Black" Width="60" Height="auto" Foreground="Black" Background="{x:Null}" HorizontalAlignment="Right"  Click="btnEditar_Click">
-                                    <materialDesign:PackIcon Kind="Edit"/>
-                                </Button>
-                                <Button x:Name="btnEliminar" Margin="10 0 10 0" HorizontalAlignment="Right"  BorderBrush="Black" Width="60" Height="auto" Foreground="Black" Background="{x:Null}" Click="btnEliminar_Click" >
-                                    <materialDesign:PackIcon Kind="delete"/>
-                                </Button>
-                               
+             FontFamily="{DynamicResource MaterialDesignFont}" WindowStyle="None" Loaded="Window_Loaded" WindowState="Maximized" Height="600" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" AllowsTransparency="True">
+    
+    <Grid Background="{x:Null}">
+        <Grid Opacity="0.5" Background="Black">
 
-                            </StackPanel>
-                            <Button x:Name="btnSalir" Margin="10,0,10,0.4" HorizontalAlignment="Right" BorderBrush="Black" Width="60" Height="auto" Foreground="Black" Background="{x:Null}"   Click="btnSalir_Click">
-                                <materialDesign:PackIcon Kind="Close"/>
-                            </Button>
+        </Grid>
+        <materialDesign:DialogHost BorderBrush="{DynamicResource MaterialDesignDivider}">
+            <materialDesign:DialogHost.DialogContent>
+                <Grid Width="300" Height="150" HorizontalAlignment="Center" >
+                    <StackPanel>
+                        <materialDesign:PackIcon Kind="Folder" Foreground="{StaticResource PrimaryHueDarkBrush}" Width="50" Height="50"/>
+                        <TextBlock Foreground="Gray" Width="200" Margin="15 5" TextWrapping="Wrap">
+                            Desea eliminar
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
+                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
+                            Cancelar
+                        </Button>
+                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Click="Button_Click_1">
+                            Aceptar
+                        </Button>
+                    </StackPanel>
 
-                        </Grid>
-                        <StackPanel Grid.Column="1" Grid.Row="1"  Margin="10">
-                            <TextBlock Margin="10 0 0 50" x:Name="txbnombre" Style="{StaticResource MaterialDesignHeadline4TextBlock}" Text="Titulo" />
-                            <Separator Margin=" 10 0 10 0"/>
-                            <StackPanel Margin="5">
-                                <Label Margin="10 10 10 10" Name="lblPrecioBase" Content="0 bs"/>
-                            </StackPanel>
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+            <materialDesign:Card UniformCornerRadius="20" Height="500" Width="900">
+                <materialDesign:TransitioningContent >
+                    <materialDesign:TransitioningContent.OpeningEffects>
+                        <materialDesign:TransitionEffect Kind="FadeIn" />
+                        <materialDesign:TransitionEffect Kind="SlideInFromBottom" />
+                    </materialDesign:TransitioningContent.OpeningEffects>
+                    <Grid   Height="500" Width="900"  Background="{x:Null}"  >
+                        <Border CornerRadius="15"  Background="White"  >
+                            <Grid  Margin="20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="1.3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid    Grid.ColumnSpan="2">
+                                    <StackPanel  Orientation="Horizontal"  HorizontalAlignment="Right" Margin="0,0,10,0.4" Width="820" >
+                                        <Button x:Name="btnEditar"  BorderBrush="Black" Width="60" Height="auto" Foreground="Black" Background="{x:Null}" HorizontalAlignment="Right"  Click="btnEditar_Click">
+                                            <materialDesign:PackIcon Kind="Edit"/>
+                                        </Button>
+                                        <Button x:Name="btnEliminar" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" Margin="10 0 10 0" HorizontalAlignment="Right"  BorderBrush="Black" Width="60" Height="auto" Foreground="Black" Background="{x:Null}" Click="btnEliminar_Click" >
+                                            <materialDesign:PackIcon Kind="delete"/>
+                                        </Button>
 
-                            <Separator Margin=" 10 0 10 0"/>
-                            <StackPanel Margin="5" Orientation="Horizontal" >
-                                <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10 10  30 10" Text="Cantidad Stock:" />
-                                <TextBlock x:Name="txbCantidaStock" Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10" Text="0" />
+                                    </StackPanel>
 
-                            </StackPanel>
-                            <Separator Margin=" 10 0 10 0"/>
-                            <StackPanel Margin="5" Orientation="Horizontal" >
-                                <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10 10  30 10" Text="Peso:" />
-                                <TextBlock x:Name="txbPeso" Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10" Text="0" />
+                                    <Button x:Name="btnSalir" Margin="10,0,10,0.4" HorizontalAlignment="Right" BorderBrush="Black" Width="60" Height="auto" Foreground="Black" Background="{x:Null}"   Click="btnSalir_Click">
+                                        <materialDesign:PackIcon Kind="Close"/>
+                                    </Button>
 
-                            </StackPanel>
-                            <Separator Margin=" 10 0 10 0"/>
-                            <StackPanel Margin="5" Orientation="Horizontal" >
-                                <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10 10  30 10" Text="Codigo Producto:" />
-                                <TextBlock x:Name="txbCodigoProducto" Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10" Text="0" />
+                                </Grid>
+                                <StackPanel Grid.Column="1" Grid.Row="1"  Margin="10">
+                                    <TextBlock Margin="10 0 0 50" x:Name="txbnombre" Style="{StaticResource MaterialDesignHeadline4TextBlock}" Text="Titulo" />
+                                    <Separator Margin=" 10 0 10 0"/>
+                                    <StackPanel Margin="5">
+                                        <Label Margin="10 10 10 10" Name="lblPrecioBase" Content="0 bs"/>
+                                    </StackPanel>
 
-                            </StackPanel>
-                            <Separator Margin=" 10 0 10 0"/>
-                            <StackPanel Margin="5" Orientation="Horizontal" >
-                                <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10 10  30 10" Text="Fabrica o Marca:" />
-                                <TextBlock x:Name="txbMarca" Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10" Text="0" />
-                            </StackPanel>
-                            <Separator Margin=" 10 0 10 0"/>
-                            <StackPanel Margin="5" Orientation="Horizontal" >
-                                <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10 10  30 10" Text="Tipo Repuesto" />
-                                <TextBlock x:Name="txbTipoRepuesto" Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10" Text="0" />
+                                    <Separator Margin=" 10 0 10 0"/>
+                                    <StackPanel Margin="5" Orientation="Horizontal" >
+                                        <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10 10  30 10" Text="Cantidad Stock:" />
+                                        <TextBlock x:Name="txbCantidaStock" Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10" Text="0" />
 
-                            </StackPanel>
+                                    </StackPanel>
+                                    <Separator Margin=" 10 0 10 0"/>
+                                    <StackPanel Margin="5" Orientation="Horizontal" >
+                                        <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10 10  30 10" Text="Peso:" />
+                                        <TextBlock x:Name="txbPeso" Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10" Text="0" />
 
-                        </StackPanel>
-                        <StackPanel Margin="10" Grid.Row="1" Grid.Column="0" Background="#F7F7F7">
+                                    </StackPanel>
+                                    <Separator Margin=" 10 0 10 0"/>
+                                    <StackPanel Margin="5" Orientation="Horizontal" >
+                                        <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10 10  30 10" Text="Codigo Producto:" />
+                                        <TextBlock x:Name="txbCodigoProducto" Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10" Text="0" />
 
-                            <Image Margin="10"  Source="/PartsAdmin/image/logo2Recurso 12logoBalnco.png"/>
-                        </StackPanel>
+                                    </StackPanel>
+                                    <Separator Margin=" 10 0 10 0"/>
+                                    <StackPanel Margin="5" Orientation="Horizontal" >
+                                        <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10 10  30 10" Text="Fabrica o Marca:" />
+                                        <TextBlock x:Name="txbMarca" Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10" Text="0" />
+                                    </StackPanel>
+                                    <Separator Margin=" 10 0 10 0"/>
+                                    <StackPanel Margin="5" Orientation="Horizontal" >
+                                        <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10 10  30 10" Text="Tipo Repuesto" />
+                                        <TextBlock x:Name="txbTipoRepuesto" Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10" Text="0" />
+
+                                    </StackPanel>
+
+                                </StackPanel>
+                                <StackPanel Margin="10" Grid.Row="1" Grid.Column="0" Background="#F7F7F7">
+
+                                    <Image Margin="10"  Source="/PartsAdmin/image/logo2Recurso 12logoBalnco.png"/>
+                                </StackPanel>
 
 
 
 
+
+                            </Grid>
+
+
+                        </Border>
+                        
 
                     </Grid>
 
+                </materialDesign:TransitioningContent>
 
-                </Border>
+            </materialDesign:Card>
+        </materialDesign:DialogHost>
 
-            </Grid>
-        </materialDesign:TransitioningContent>
-    </materialDesign:Card>
+    </Grid>
 </Window>

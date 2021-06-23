@@ -172,11 +172,8 @@
 
 
         <Grid  Width="auto" Height="auto"  Margin="0, 70, 0, 0 ">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="435*"/>
-                <ColumnDefinition Width="359*"/>
-            </Grid.ColumnDefinitions>
-            <Border CornerRadius="15" Background="White" Margin="20,20,19.6,20.2" Grid.ColumnSpan="2">
+
+            <Border CornerRadius="15" Background="White" Margin="20,20,20,20" Grid.ColumnSpan="2">
                 <materialDesign:TransitioningContent>
                     <materialDesign:TransitioningContent.OpeningEffects> 
                         <materialDesign:TransitionEffect Kind="FadeIn" />
@@ -185,7 +182,13 @@
                     <Grid  x:Name="gridMain">
                     </Grid>
                 </materialDesign:TransitioningContent>
+                
             </Border>
+            <!-- long hand form for setting the message -->
+            <materialDesign:Snackbar Margin="20 0 20 0" x:Name="snackbarMessage" IsActive="False" HorizontalAlignment="Stretch">
+                <materialDesign:SnackbarMessage  Content="Hello 2" ActionContent="UNDO" />
+            </materialDesign:Snackbar>
+
 
         </Grid>
 

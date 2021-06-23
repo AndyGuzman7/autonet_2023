@@ -34,7 +34,7 @@
                         </Grid.RowDefinitions>
                         <Grid    Grid.ColumnSpan="2">
                             <StackPanel  Orientation="Horizontal"  HorizontalAlignment="Right" Margin="0,0,10,0.4" Width="820" >
-                                <Button x:Name="btnEditar"  BorderBrush="Black" Width="60" Height="auto" Foreground="Black" Background="{x:Null}" HorizontalAlignment="Right"  Click="btnEditar_Click">
+                                <Button x:Name="btnEditar"  BorderBrush="Black" Width="60" Height="30" Foreground="Black" Background="{x:Null}" HorizontalAlignment="Right"  Click="btnEditar_Click" VerticalAlignment="Top">
                                     <materialDesign:PackIcon Kind="Edit"/>
                                 </Button>
                                 <Button x:Name="btnEliminar" Margin="10 0 10 0" HorizontalAlignment="Right"  BorderBrush="Black" Width="60" Height="auto" Foreground="Black" Background="{x:Null}" Click="btnEliminar_Click" >
@@ -78,7 +78,7 @@
 
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                
+
                                 <StackPanel Margin="5" Background="#FFF1EFEF"  Orientation="Horizontal" >
                                     <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10 10  30 10" Text="Telefono:" />
                                     <TextBlock x:Name="txbTelefono" Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10" Text="0" />
@@ -97,8 +97,8 @@
                                 <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10 10  30 10" Text="Correo:" />
                                 <TextBlock x:Name="txbCorreo" Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="10" Text="0" />
                             </StackPanel>
-                           
-                           
+
+
 
                         </StackPanel>
                         <StackPanel Margin="10" Grid.Row="1" Grid.Column="0" Background="#F7F7F7">

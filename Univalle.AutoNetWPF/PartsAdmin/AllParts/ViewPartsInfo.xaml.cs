@@ -54,10 +54,12 @@ namespace Univalle.AutoNetWPF.PartsAdmin
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            EditPart editPart = new EditPart(spareDate);
+            
+            EditParts editPart = new EditParts(spareDate);
             editPart.recargarPagina += RecargarPagina;
+            this.Close();
             editPart.ShowDialog();
+            
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -71,7 +73,7 @@ namespace Univalle.AutoNetWPF.PartsAdmin
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            if(MessageBox.Show("Esta Realmente segur@\nde eliminar el producto", "Eliminar", MessageBoxButton.YesNo, MessageBoxImage.Warning) ==MessageBoxResult.Yes)
+            /*if(MessageBox.Show("Esta Realmente segur@\nde eliminar el producto", "Eliminar", MessageBoxButton.YesNo, MessageBoxImage.Warning) ==MessageBoxResult.Yes)
             {
                 try
                 {
@@ -93,8 +95,18 @@ namespace Univalle.AutoNetWPF.PartsAdmin
                     throw;
                 }
 
-            }
+            }*/
                     
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("funciona");
         }
     }
 }

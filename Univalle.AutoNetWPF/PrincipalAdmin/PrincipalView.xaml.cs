@@ -1,9 +1,11 @@
 ﻿using DAO.Implementacion;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -67,7 +69,26 @@ namespace Univalle.AutoNetWPF
                 gridMain.Children.Add(usc);
                 CambiarBotones(1);
             }
+            LlamarTiempo();
+
+
+
         }
+        private async void LlamarTiempo()
+        {
+            snackbarMessage.IsActive = true;
+            Task task = new Task(Tiempo);
+            task.Start();
+            await task;
+            snackbarMessage.IsActive = false;
+        }
+
+        private void Tiempo()
+        {
+            int delay = 3000;
+            Thread.Sleep(delay);
+        }
+
 
         private void CambiarBotones(int num)
         {

@@ -66,6 +66,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PersonAdmin\EmployeeT\AddEmployeeSimple.xaml.cs">
+      <DependentUpon>AddEmployeeSimple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonAdmin\EmployeeT\EditEmployeeSimple.xaml.cs">
+      <DependentUpon>EditEmployeeSimple.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User\DataUser.xaml.cs">
       <DependentUpon>DataUser.xaml</DependentUpon>
     </Compile>
@@ -95,6 +101,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HomeAdmin\uscHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonAdmin\EmployeeT\AddEmployeeSimple.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonAdmin\EmployeeT\EditEmployeeSimple.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

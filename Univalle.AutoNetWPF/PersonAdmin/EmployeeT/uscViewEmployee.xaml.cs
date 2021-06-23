@@ -16,6 +16,7 @@ using DAO.Model;
 using DAO.Implementacion;
 using System.Data;
 using Univalle.AutoNetWPF.PersonasAdmin.EmployeeT;
+using Univalle.AutoNetWPF.PersonAdmin.EmployeeT;
 
 namespace Univalle.AutoNetWPF.PersonasAdmin
 {
@@ -279,7 +280,7 @@ Fila2";
 
         private void btnAñadirEmpleado_Click(object sender, RoutedEventArgs e)
         {
-            AddEmployee addEmployee = new AddEmployee();
+            AddEmployeeSimple addEmployee = new AddEmployeeSimple();
             addEmployee.Show();
         }
     }

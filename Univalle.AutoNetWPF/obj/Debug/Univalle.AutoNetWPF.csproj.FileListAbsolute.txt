@@ -70,3 +70,7 @@ E:\Archivos Andy\UNIVERSIDAD\3ER-SEMESTRE\BASE DE DATOS II\PBDD_AUTONET\Univalle
 E:\Archivos Andy\UNIVERSIDAD\3ER-SEMESTRE\BASE DE DATOS II\PBDD_AUTONET\Univalle.AutoNet\Univalle.AutoNetWPF\obj\Debug\PersonAdmin\ClientT\uscClient.baml
 E:\Archivos Andy\UNIVERSIDAD\3ER-SEMESTRE\BASE DE DATOS II\PBDD_AUTONET\Univalle.AutoNet\Univalle.AutoNetWPF\obj\Debug\PersonAdmin\EmployeeT\uscViewEmployee.baml
 E:\Archivos Andy\UNIVERSIDAD\3ER-SEMESTRE\BASE DE DATOS II\PBDD_AUTONET\Univalle.AutoNet\Univalle.AutoNetWPF\obj\Debug\RegisterAdmin\Login\WindowLogin.baml
+E:\Archivos Andy\UNIVERSIDAD\3ER-SEMESTRE\BASE DE DATOS II\PBDD_AUTONET\Univalle.AutoNet\Univalle.AutoNetWPF\obj\Debug\PersonAdmin\EmployeeT\AddEmployeeSimple.g.cs
+E:\Archivos Andy\UNIVERSIDAD\3ER-SEMESTRE\BASE DE DATOS II\PBDD_AUTONET\Univalle.AutoNet\Univalle.AutoNetWPF\obj\Debug\PersonAdmin\EmployeeT\AddEmployeeSimple.baml
+E:\Archivos Andy\UNIVERSIDAD\3ER-SEMESTRE\BASE DE DATOS II\PBDD_AUTONET\Univalle.AutoNet\Univalle.AutoNetWPF\obj\Debug\PersonAdmin\EmployeeT\EditEmployeeSimple.g.cs
+E:\Archivos Andy\UNIVERSIDAD\3ER-SEMESTRE\BASE DE DATOS II\PBDD_AUTONET\Univalle.AutoNet\Univalle.AutoNetWPF\obj\Debug\PersonAdmin\EmployeeT\EditEmployeeSimple.baml

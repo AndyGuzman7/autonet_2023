@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using DAO.Model;
 using DAO.Implementacion;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Univalle.AutoNetWPF.PartsAdmin
 {
@@ -168,11 +169,11 @@ namespace Univalle.AutoNetWPF.PartsAdmin
             Image image = new Image();
             image.Source = new BitmapImage(new Uri("pack://application:,,,/PartsAdmin/image/rodamientos.png"));
             myBrush.ImageSource = image.Source;
-            
+            char[] charsToTrim = { '*', ' ', '\'' };
             for (int i = 0; i < cant; i++)
             {
                 buttons[i] = new Button();
-                buttons[i].Name = listaSpares[i].NameProduct;
+                buttons[i].Name = Regex.Replace(listaSpares[i].NameProduct, @"\s", "");
                 buttons[i].Content = listaSpares[i].NameProduct;
                 buttons[i].FontSize = 20;
                 buttons[i].Foreground = Brushes.Black;
@@ -238,7 +239,7 @@ Fila2";
             Spare spareDate = new Spare();
             foreach (var item in spares)
             {
-                if(((Button)sender).Name == item.NameProduct)
+                if(((Button)sender).Name == Regex.Replace(item.NameProduct, @"\s", ""))
                 {
                     spareDate = item;
                     ViewParts viewParts = new ViewParts(spareDate);

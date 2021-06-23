@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using DAO.Model;
 using DAO.Implementacion;
 using System.Data;
-
+using Univalle.AutoNetWPF.PersonAdmin.EmployeeT;
 
 namespace Univalle.AutoNetWPF.PersonasAdmin.Employee
 {
@@ -82,9 +82,8 @@ namespace Univalle.AutoNetWPF.PersonasAdmin.Employee
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
-            PersonasAdmin.EmployeeT.EditEmployee editEmployee = new EmployeeT.EditEmployee(employeee);
-            editEmployee.recargarPaginaEmpleado += RecargarPagina; 
-            editEmployee.Show();
+            EditEmployeeSimple editEmployeeSimple = new EditEmployeeSimple(employeee);
+            editEmployeeSimple.Show();
             this.Close();
         }
         public void RecargarPagina()

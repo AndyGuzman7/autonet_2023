@@ -14,20 +14,20 @@ using System.Windows.Shapes;
 using DAO.Model;
 using DAO.Implementacion;
 using System.Data;
-
+using System.Threading;
 
 namespace Univalle.AutoNetWPF.PartsAdmin
 {
     /// <summary>
     /// Lógica de interacción para EditPart.xaml
     /// </summary>
-    public partial class EditPart : Window
+    public partial class EditParts : Window
     {
         public event RecargarPagina recargarPagina;
         Spare spareDate;
         SpareImpl spareImpl;
         
-        public EditPart(Spare spare)
+        public EditParts(Spare spare)
         {
             InitializeComponent();
             this.spareDate = spare;
@@ -50,12 +50,13 @@ namespace Univalle.AutoNetWPF.PartsAdmin
                 int res = spareImpl.Update(spareDate);
                 if(res > 0)
                 {
-                    MessageBox.Show("Producto modificado con exito");
+                    LlamarTiempo();
+                    //MessageBox.Show("Producto modificado con exito");
                     if(recargarPagina != null)
                     {
                         recargarPagina();
                     }
-                    this.Close();
+                    //this.Close();
                 }
                 
 
@@ -87,6 +88,20 @@ namespace Univalle.AutoNetWPF.PartsAdmin
             txtPeso.Text = spareDate.Weight.ToString();
             txtTipoRepuesto.Text = spareDate.IdSpareType.ToString();
             txtPrecioBase.Text = spareDate.BasePrice.ToString();
+        }
+        private async void LlamarTiempo()
+        {
+            snackbarMessage.IsActive = true;
+            Task task = new Task(Tiempo);
+            task.Start();
+            await task;
+            snackbarMessage.IsActive = false;
+        }
+
+        private void Tiempo()
+        {
+            int delay = 3000;
+            Thread.Sleep(delay);
         }
     }
 }
