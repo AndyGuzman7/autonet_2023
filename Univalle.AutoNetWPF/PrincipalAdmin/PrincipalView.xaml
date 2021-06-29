@@ -13,7 +13,10 @@
      TextOptions.TextFormattingMode="Ideal"
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
-     FontFamily="{DynamicResource MaterialDesignFont}"
+     FontFamily="Montserrat Regular"
+        
+        Foreground="Black"
+        
         WindowState="Maximized" WindowStyle="None" Loaded="Window_Loaded" >
     <Window.Resources>
         <ContextMenu x:Key="cmButton">
@@ -23,6 +26,7 @@
             <MenuItem Header="Menu item 3" />
         </ContextMenu>
     </Window.Resources>
+    
     <!--<Window.Resources>
         <Storyboard x:Key="menuCollapse">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="gridMenu">
@@ -43,29 +47,58 @@
         </EventTrigger>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnOpenMenu">
             <BeginStoryboard Storyboard="{StaticResource menuOpen}"/>
-        </EventTrigger>
+        </EventTrigger>#1E2E3B
     </Window.Triggers>-->
     <Grid Background="#E6E6E8">
 
-        <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth3" x:Name="gridNav" Height="70" VerticalAlignment="Top" Background="#1E2E3B" >
-            <Grid>
-                <StackPanel  HorizontalAlignment="Left" Orientation="Horizontal">
-                    <Border CornerRadius="10">
-                        <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth3" >
-                            <StackPanel x:Name="gridFondo" Orientation="Horizontal" >
-                                <Image  Margin="5" Source="/PrincipalAdmin/image/logo2Recurso 10logo.png" Width="auto" Height="auto"  />
-                                <Image Source="/PrincipalAdmin/image/logo2Recurso 11logoletra.png" Width="100" Margin="0 0 10 0" />
-                            </StackPanel>
-                        </materialDesign:Card>
-                    </Border>
-                     <Grid>
+        <Grid  x:Name="gridNav" Height="100" VerticalAlignment="Top" Background="white" >
+            <Grid Height="100">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid  Grid.Row="1" >
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/HomeAdmin/image/fondo3.jpg" Stretch="UniformToFill"/>
+                    </Grid.Background>
+                    <Grid>
+                        <Grid Background="#1E2E3B" Opacity="0.7">
+                            
+                        </Grid>
+                        <StackPanel>
 
-                            <Button x:Name="btnInicioL" Height="70"   VerticalAlignment="Center" Background="{x:Null}"   BorderBrush="{x:Null}" Margin="0" Padding="0" Click="btnInicioL_Click">
+                            <Separator Margin=" 5 5 5 5"/>
+                            <Grid Margin="15 0" Grid.Row="0">
+                                <TextBlock x:Name="txbNamePage"  Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="" Foreground="White" >
+
+                                </TextBlock>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                  
+                    
+                    
+                    
+                </Grid>
+
+
+                <Grid Grid.Row="0" Height="50">
+
+                    <StackPanel  HorizontalAlignment="Left" Orientation="Horizontal">
+                        
+                                <StackPanel Background="White" x:Name="gridFondo" Orientation="Horizontal" >
+                                    <Image  Margin="5" Source="/PrincipalAdmin/image/logo2Recurso 10logo.png" Width="auto" Height="auto"  />
+                                    <Image Source="/PrincipalAdmin/image/logo2Recurso 11logoletra.png" Width="100" Margin="0 0 10 0" />
+                                </StackPanel>
+
+                        <Grid Height="50">
+
+                            <Button x:Name="btnInicioL" Height="50"   VerticalAlignment="Center" Background="{x:Null}"   BorderBrush="{x:Null}" Margin="0" Padding="0" Click="btnInicioL_Click" MouseLeave="btnInicioL_MouseLeave" MouseEnter="btnInicioL_MouseEnter">
 
                                 <StackPanel Orientation="Vertical" Margin="10">
                                     <StackPanel Height="auto" Orientation="Horizontal">
-                                        <materialDesign:PackIcon Kind="home" Margin="0 5 15 5" />
-                                        <TextBlock VerticalAlignment="Center" Text="Incio"  Margin="5" Height="auto"/>
+                                        <materialDesign:PackIcon Kind="home" Margin="0 5 15 5"  Foreground="Black"/>
+                                        <TextBlock x:Name="txbIncio" VerticalAlignment="Center" Text="Incio" Foreground="Black"  Margin="5" Height="auto"/>
                                     </StackPanel>
                                     <Grid x:Name="gridM1" Margin="10 0 10 5" Background="#FF6F8190" Height="2" Visibility="Collapsed"/>
                                 </StackPanel>
@@ -73,66 +106,65 @@
 
                             </Button>
                         </Grid>
-                    
-                    <Grid >
 
-                        <Button x:Name="btnEmpleados" Height="70"   VerticalAlignment="Bottom"  Background="{x:Null}" BorderBrush="{x:Null}"  Padding="0" Click="btnEmpleadosL_Click">
-                            <StackPanel VerticalAlignment="Center" Margin="10">
-                                <StackPanel Height="auto" Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="AccountGroup" Height="auto" Margin="0 5 15 0 "  />
-                                    <TextBlock VerticalAlignment="Center" Text="Empleados"  Margin="5" Height="auto"/>
+                        <Grid >
+
+                            <Button x:Name="btnEmpleados" Height="50"   VerticalAlignment="Bottom"  Background="{x:Null}" BorderBrush="{x:Null}"  Padding="0" Click="btnEmpleadosL_Click" MouseEnter="btnEmpleados_MouseEnter" MouseLeave="btnEmpleados_MouseLeave">
+                                <StackPanel VerticalAlignment="Center" Margin="10">
+                                    <StackPanel Height="auto" Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="AccountGroup" Height="auto" Foreground="Black" Margin="0 5 15 0 "  />
+                                        <TextBlock x:Name="txbEmpleados" VerticalAlignment="Center" Text="Empleados" Foreground="Black"  Margin="5" Height="auto"/>
+                                    </StackPanel>
+                                    <Grid x:Name="gridM2" Margin="10 0 10 5" Background="#FF6F8190" Height="2" Visibility="Collapsed"/>
                                 </StackPanel>
-                                <Grid x:Name="gridM2" Margin="10 0 10 5" Background="#FF6F8190" Height="2" Visibility="Collapsed"/>
-                            </StackPanel>
 
 
-                        </Button>
-                    </Grid>
+                            </Button>
+                        </Grid>
 
 
-                    <Grid>
-                        <Button x:Name="btnClientesL" Height="70"   VerticalAlignment="Center" Background="{x:Null}"   BorderBrush="{x:Null}" Margin="0" Padding="0" Click="btnClientesL_Click">
-                            <StackPanel Orientation="Vertical" Margin="10">
-                                <StackPanel Height="auto" Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="AccountMultiple" Margin="0 5 15 5" />
-                                    <TextBlock VerticalAlignment="Center" Text="Clientes"  Margin="5" Height="auto"/>
+                        <Grid>
+                            <Button x:Name="btnClientesL" Height="50"   VerticalAlignment="Center" Background="{x:Null}"   BorderBrush="{x:Null}" Margin="0" Padding="0" Click="btnClientesL_Click" MouseLeave="btnClientesL_MouseLeave" MouseEnter="btnClientesL_MouseEnter">
+                                <StackPanel Orientation="Vertical" Margin="10">
+                                    <StackPanel Height="auto" Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="AccountMultiple" Margin="0 5 15 5" Foreground="Black" />
+                                        <TextBlock x:Name="txbClientes" VerticalAlignment="Center" Text="Clientes"  Margin="5" Height="auto" Foreground="Black"/>
+                                    </StackPanel>
+                                    <Grid x:Name="gridM3" Margin="10 0 10 5" Background="#FF6F8190" Height="2" Visibility="Collapsed"/>
                                 </StackPanel>
-                                <Grid x:Name="gridM3" Margin="10 0 10 5" Background="#FF6F8190" Height="2" Visibility="Collapsed"/>
-                            </StackPanel>
 
 
-                        </Button>
-                    </Grid>
+                            </Button>
+                        </Grid>
 
-                    <Grid  >
-                        <Button x:Name="btnRegistros" Height="70"  VerticalAlignment="Center"  Background="{x:Null}" BorderBrush="{x:Null}" Margin="0" Padding="0" Click="btnRegistros_Click">
-                            <StackPanel VerticalAlignment="Center" Margin="10">
-                                <StackPanel Height="auto" Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="Ballot" Margin="0 5 15 5" />
-                                    <TextBlock VerticalAlignment="Center" Text="Ventas"  Margin="5" Height="auto"/>
+                        <Grid  >
+                            <Button x:Name="btnRegistros" Height="50"  VerticalAlignment="Center"  Background="{x:Null}" BorderBrush="{x:Null}" Margin="0" Padding="0" Click="btnRegistros_Click" MouseLeave="btnRegistros_MouseLeave" MouseEnter="btnRegistros_MouseEnter">
+                                <StackPanel VerticalAlignment="Center" Margin="10">
+                                    <StackPanel Height="auto" Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Ballot" Margin="0 5 15 5" Foreground="Black" />
+                                        <TextBlock x:Name="txbVentas" VerticalAlignment="Center" Text="Ventas"  Margin="5" Height="auto" Foreground="Black"/>
+                                    </StackPanel>
+                                    <Grid x:Name="gridM4" Margin="10 0 10 5" Background="#FF6F8190" Height="2" Visibility="Collapsed"/>
                                 </StackPanel>
-                                <Grid x:Name="gridM4" Margin="10 0 10 5" Background="#FF6F8190" Height="2" Visibility="Collapsed"/>
-                            </StackPanel>
 
 
-                        </Button>
-                    </Grid>
-                     <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                        
-                        <Menu x:Name="MenuRepuestos"  VerticalContentAlignment="Center" Padding="0" Background="#FF1E2E3B"  BorderBrush="{x:Null}" MouseLeftButtonUp="Menu_MouseLeftButtonUp" MouseLeftButtonDown="Menu_MouseLeftButtonDown">
-                              <MenuItem Name="menuItemRepuesto" Icon="{materialDesign:PackIcon Kind =Abacus}" TextBlock.TextAlignment="Left" Header="Repuestos" Height="70"  Padding="10"    Foreground="White"     MouseRightButtonUp="MenuItem_MouseRightButtonUp" MouseRightButtonDown="MenuItem_MouseRightButtonDown" FontSize="14" >
-                                    <MenuItem Name="mITodoLosRepuestos"  Header="Todos los repuestos" Click="mITodoLosRepuestos_Click"/>
+                            </Button>
+                        </Grid>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+
+                            <Menu x:Name="MenuRepuestos" Background="White" VerticalContentAlignment="Center" Padding="0"  BorderBrush="{x:Null}" MouseLeftButtonUp="Menu_MouseLeftButtonUp" MouseLeftButtonDown="Menu_MouseLeftButtonDown">
+                                <MenuItem Name="menuItemRepuesto" FontFamily="Montserrat Regular" Background="White" Foreground="Black" Icon="{materialDesign:PackIcon Kind =Abacus}" TextBlock.TextAlignment="Left" Header="Repuestos" Height="50"  Padding="10"       MouseRightButtonUp="MenuItem_MouseRightButtonUp" MouseRightButtonDown="MenuItem_MouseRightButtonDown" FontSize="13" >
+                                    <MenuItem Name="mITodoLosRepuestos" Foreground="Black"  Header="Todos los repuestos" Click="mITodoLosRepuestos_Click"/>
                                     <Separator/>
-                                    <MenuItem Name="mITipoRepuesto" Header="Tipos de repuestos" Click="mITipoRepuesto_Click" />
+                                    <MenuItem Name="mITipoRepuesto" Foreground="Black" Header="Tipos de repuestos" Click="mITipoRepuesto_Click" />
                                     <Separator/>
-                                    <MenuItem Header="Categoria de respuestos"   />
+                                    <MenuItem Header="Categoria de respuestos"  Foreground="Black"  />
 
-                                   </MenuItem>
+                                </MenuItem>
 
                             </Menu>
                             <Grid x:Name="gridM5" Margin="10 0 10 5" Background="#FF6F8190" Height="2" Visibility="Collapsed" />
                         </StackPanel>
-                   
 
 
 
@@ -146,34 +178,36 @@
 
 
 
-                </StackPanel>
 
-                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" >
+                    </StackPanel>
 
-                    <Menu Background="#1E2E3B" MouseLeftButtonUp="Menu_MouseLeftButtonUp" MouseLeftButtonDown="Menu_MouseLeftButtonDown">
-                        <MenuItem Name="menuItemHeader" Header="AndyG"  Background="#FF1E2E3B"  Foreground="White"  Icon="{materialDesign:PackIcon Kind=AccountCircleOutline}" Height="70" Width="auto" MouseRightButtonUp="MenuItem_MouseRightButtonUp" MouseRightButtonDown="MenuItem_MouseRightButtonDown" >
-                            <MenuItem  Header="Ayuda" Icon="{materialDesign:PackIcon Kind=HelpCircleOutline}"/>
-                            <MenuItem Name="mtAdministrarCuenta" Header="Administrar tu cuenta" Icon="{materialDesign:PackIcon Kind=AccountEdit}" Click="mtAdministrarCuenta_Click"
+                    <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" >
+
+                        <Menu Background="White" MouseLeftButtonUp="Menu_MouseLeftButtonUp" MouseLeftButtonDown="Menu_MouseLeftButtonDown">
+                            <MenuItem Name="menuItemHeader" Background="White" Header="AndyG" FontSize="13" FontFamily="Montserrat Regular"   Foreground="Black"  Icon="{materialDesign:PackIcon Kind=AccountCircleOutline}" Height="50" Width="auto" MouseRightButtonUp="MenuItem_MouseRightButtonUp" MouseRightButtonDown="MenuItem_MouseRightButtonDown" >
+                                <MenuItem  Header="Ayuda" Icon="{materialDesign:PackIcon Kind=HelpCircleOutline}"/>
+                                <MenuItem Name="mtAdministrarCuenta" Header="Administrar tu cuenta" Icon="{materialDesign:PackIcon Kind=AccountEdit}" Click="mtAdministrarCuenta_Click"
                                       />
-                            <MenuItem Header="Configuraición" Icon="{materialDesign:PackIcon Kind=Nut}"  />
-                            <MenuItem Name="mtAcercaDe" Header="Acerca de..." Icon="{materialDesign:PackIcon Kind=InformationOutline}" Click="mtAcercaDe_Click"   />
+                                <MenuItem Header="Configuraición" Icon="{materialDesign:PackIcon Kind=Nut}"  />
+                                <MenuItem Name="mtAcercaDe" Header="Acerca de..." Icon="{materialDesign:PackIcon Kind=InformationOutline}" Click="mtAcercaDe_Click"   />
 
-                            <Separator/>
-                            <MenuItem Header="Salir"  Icon="{materialDesign:PackIcon Kind=ExitToApp}" Click="btnSalir_Click" />
-                        </MenuItem>
-                    </Menu>
+                                <Separator/>
+                                <MenuItem Header="Salir"  Icon="{materialDesign:PackIcon Kind=ExitToApp}" Click="btnSalir_Click" />
+                            </MenuItem>
+                        </Menu>
 
 
-                </StackPanel>
+                    </StackPanel>
+                </Grid>
             </Grid>
-        </materialDesign:Card>
+        </Grid>
 
 
 
 
-        <Grid  Width="auto" Height="auto"  Margin="0, 70, 0, 0 ">
+        <Grid  Width="auto" Height="auto"  Margin="0, 102, 0, 0 ">
 
-            <Border CornerRadius="15" Background="White" Margin="20,20,20,20" Grid.ColumnSpan="2">
+            <Border CornerRadius="0" Background="White" Margin="0" Grid.ColumnSpan="2">
                 <materialDesign:TransitioningContent>
                     <materialDesign:TransitioningContent.OpeningEffects> 
                         <materialDesign:TransitionEffect Kind="FadeIn" />

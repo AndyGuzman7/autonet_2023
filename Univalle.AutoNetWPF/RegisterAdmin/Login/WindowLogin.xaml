@@ -18,7 +18,7 @@
              materialDesign:ShadowAssist.ShadowDepth="Depth3"
         
              
-             FontFamily="{DynamicResource MaterialDesignFont}" WindowStyle="None" Loaded="Window_Loaded" Height="600" Background="Transparent"   WindowState="Maximized" Width="1000" AllowsTransparency="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+             FontFamily="Montserrat Regular" WindowStyle="None" Loaded="Window_Loaded" Height="600" Background="Transparent"   WindowState="Maximized" Width="1000" AllowsTransparency="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
 
     <!--<Window.Background>
         <SolidColorBrush Opacity="0.6" Color="Black">

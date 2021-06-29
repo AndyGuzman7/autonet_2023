@@ -45,17 +45,26 @@ namespace Univalle.AutoNetWPF.PartsAdmin
 
         public  void LoadData()
         {
-            //try
-            //{
+            DataTable dt = new DataTable();
+           /* try
+            {*/
                 spareImpl = new SpareImpl();
                 DataTable dataTable = spareImpl.Select();
-
-                CrearColumansFila(LlenarLista(dataTable).Count);
-            //}
-           // catch(Exception ex)
-            //{
-          //      MessageBox.Show(ex.Message);
-            //}
+                int height = (int)SystemParameters.PrimaryScreenHeight;
+              
+                int width = (int)SystemParameters.PrimaryScreenWidth;
+                dataGridProgram.Width = width - 20;
+                dataGridProgram.Height = height - 20;
+               // dataGridProgram.Visibility = Visibility.Hidden;
+                
+                dataGridProgram.ItemsSource = dataTable.AsDataView();
+            dataGridProgram.Columns[2].Visibility = Visibility.Collapsed;
+                //CrearColumansFila(LlenarLista(dataTable).Count);
+            /*}
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
             
                 
                 

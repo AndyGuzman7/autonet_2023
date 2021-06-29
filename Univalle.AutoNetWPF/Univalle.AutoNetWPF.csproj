@@ -323,6 +323,7 @@
     <Resource Include="HomeAdmin\image\bugias.jpg" />
     <Resource Include="HomeAdmin\image\lla.png" />
     <Resource Include="HomeAdmin\image\rodamientos.jpg" />
+    <Resource Include="HomeAdmin\image\fondo3.jpg" />
     <Content Include="PrincipalAdmin\image\autoNet.png" />
   </ItemGroup>
   <ItemGroup />

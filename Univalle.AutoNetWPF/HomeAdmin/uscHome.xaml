@@ -21,7 +21,7 @@
                 <materialDesign:TransitionEffect Kind="SlideInFromBottom" />
             </materialDesign:TransitioningContent.OpeningEffects>
             <Grid  Width="auto" Height="auto"  >
-                <Border CornerRadius="15" Background="White" >
+                <Border CornerRadius="0" Background="White" >
                     <Grid>
 
                         <Grid >
@@ -31,7 +31,7 @@
                                 <RowDefinition/>
 
                             </Grid.RowDefinitions>
-                            <Border CornerRadius="15 15 0 0" Grid.Row="0">
+                            <Border CornerRadius="0 0 0 0" Grid.Row="0">
                                 <Border.Background>
                                     <ImageBrush ImageSource="/HomeAdmin/image/fondo.jpg" Stretch="UniformToFill"/>
                                 </Border.Background>

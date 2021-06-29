@@ -68,6 +68,7 @@ namespace Univalle.AutoNetWPF
             {
                 gridMain.Children.Add(usc);
                 CambiarBotones(1);
+                txbNamePage.Text = "Inicio";
             }
             LlamarTiempo();
 
@@ -92,44 +93,47 @@ namespace Univalle.AutoNetWPF
 
         private void CambiarBotones(int num)
         {
-            Color color = (Color)ColorConverter.ConvertFromString("#FF175CC1");
-            Color color2 = (Color)ColorConverter.ConvertFromString("#1E2E3B");
+            Color color = (Color)ColorConverter.ConvertFromString("#757575");
+            Color color2 = (Color)ColorConverter.ConvertFromString("#161513");
             switch (num)
             {
                 case 1:
-                    btnInicioL.Background = new SolidColorBrush(color);
-                    btnEmpleados.Background = new SolidColorBrush(color2);
-                    btnClientesL.Background = new SolidColorBrush(color2);
-                    btnRegistros.Background = new SolidColorBrush(color2);
-                    MenuRepuestos.Background = new SolidColorBrush(color2);
+                    txbIncio.Foreground = new SolidColorBrush(color);
+                    txbEmpleados.Foreground = new SolidColorBrush(color2);
+                    txbClientes.Foreground = new SolidColorBrush(color2);
+                    txbVentas.Foreground = new SolidColorBrush(color2);
+                    menuItemRepuesto.Foreground = new SolidColorBrush(color2);
+
                     break;
                 case 2:
-                    btnInicioL.Background = new SolidColorBrush(color2);
-                    btnEmpleados.Background = new SolidColorBrush(color);
-                    btnClientesL.Background = new SolidColorBrush(color2);
-                    btnRegistros.Background = new SolidColorBrush(color2);
-                    MenuRepuestos.Background = new SolidColorBrush(color2);
+                    txbIncio.Foreground = new SolidColorBrush(color2);
+                    txbEmpleados.Foreground = new SolidColorBrush(color);
+                    txbClientes.Foreground = new SolidColorBrush(color2);
+                    txbVentas.Foreground = new SolidColorBrush(color2);
+                    menuItemRepuesto.Foreground = new SolidColorBrush(color2);
+
                     break;
                 case 3:
-                    btnInicioL.Background = new SolidColorBrush(color2);
-                    btnEmpleados.Background = new SolidColorBrush(color2);
-                    btnClientesL.Background = new SolidColorBrush(color);
-                    btnRegistros.Background = new SolidColorBrush(color2);
-                    MenuRepuestos.Background = new SolidColorBrush(color2);
+                    txbIncio.Foreground = new SolidColorBrush(color2);
+                    txbEmpleados.Foreground = new SolidColorBrush(color2);
+                    txbClientes.Foreground = new SolidColorBrush(color);
+                    txbVentas.Foreground = new SolidColorBrush(color2);
+                    menuItemRepuesto.Foreground = new SolidColorBrush(color2);
+
                     break;
                 case 4:
-                    btnInicioL.Background = new SolidColorBrush(color2);
-                    btnEmpleados.Background = new SolidColorBrush(color2);
-                    btnClientesL.Background = new SolidColorBrush(color2);
-                    btnRegistros.Background = new SolidColorBrush(color2);
-                    MenuRepuestos.Background = new SolidColorBrush(color2);
+                    txbIncio.Foreground = new SolidColorBrush(color2);
+                    txbEmpleados.Foreground = new SolidColorBrush(color2);
+                    txbClientes.Foreground = new SolidColorBrush(color2);
+                    txbVentas.Foreground = new SolidColorBrush(color);
+                    menuItemRepuesto.Foreground = new SolidColorBrush(color2);
                     break;
                 case 5:
-                    btnInicioL.Background = new SolidColorBrush(color2);
-                    btnEmpleados.Background = new SolidColorBrush(color2);
-                    btnClientesL.Background = new SolidColorBrush(color2);
-                    btnRegistros.Background = new SolidColorBrush(color2);
-                    MenuRepuestos.Background = new SolidColorBrush(color);
+                    txbIncio.Foreground = new SolidColorBrush(color2);
+                    txbEmpleados.Foreground = new SolidColorBrush(color2);
+                    txbClientes.Foreground = new SolidColorBrush(color2);
+                    txbVentas.Foreground = new SolidColorBrush(color2);
+                    menuItemRepuesto.Foreground = new SolidColorBrush(color);
                     break;
             }
         }
@@ -155,6 +159,7 @@ namespace Univalle.AutoNetWPF
             {
                 gridMain.Children.Add(usc);
                 CambiarBotones(3);
+                txbNamePage.Text = "Clientes";
             }
         }
 
@@ -176,6 +181,7 @@ namespace Univalle.AutoNetWPF
             if (usc != null)
             {
                 gridMain.Children.Add(usc);
+                
             }
         }
 
@@ -229,6 +235,7 @@ namespace Univalle.AutoNetWPF
             {
                 gridMain.Children.Add(usc);
                 CambiarBotones(5);
+                txbNamePage.Text = "Repuestos";
             }
         }
 
@@ -240,6 +247,7 @@ namespace Univalle.AutoNetWPF
             {
                 gridMain.Children.Add(usc);
                 CambiarBotones(5);
+                txbNamePage.Text = "Repuestos";
             }
         }
 
@@ -253,6 +261,7 @@ namespace Univalle.AutoNetWPF
             {
                 gridMain.Children.Add(usc);
                 CambiarBotones(2);
+                txbNamePage.Text = "Empleados";
             }
 
         }
@@ -275,6 +284,7 @@ namespace Univalle.AutoNetWPF
             {
                 gridMain.Children.Add(usc);
                 CambiarBotones(1);
+                txbNamePage.Text = "Inicio";
             }
 
         }
@@ -289,5 +299,63 @@ namespace Univalle.AutoNetWPF
             DataUser dataUser = new DataUser();
             dataUser.Show();
         }
+
+        private void btnInicioL_MouseLeave(object sender, MouseEventArgs e)
+        {
+            CambiarBotonesDebajo((Button)sender);
+        }
+
+        private void btnInicioL_MouseEnter(object sender, MouseEventArgs e)
+        {
+            CambiarBotonesSobre((Button)sender);
+        }
+
+        private void btnEmpleados_MouseEnter(object sender, MouseEventArgs e)
+        {
+            CambiarBotonesSobre((Button)sender);
+        }
+
+        private void btnEmpleados_MouseLeave(object sender, MouseEventArgs e)
+        {
+            CambiarBotonesDebajo((Button)sender);
+        }
+
+        private void btnClientesL_MouseLeave(object sender, MouseEventArgs e)
+        {
+            CambiarBotonesDebajo((Button)sender);
+        }
+
+        private void btnClientesL_MouseEnter(object sender, MouseEventArgs e)
+        {
+            CambiarBotonesSobre((Button)sender);
+        }
+
+        private void btnRegistros_MouseLeave(object sender, MouseEventArgs e)
+        {
+            CambiarBotonesDebajo((Button)sender);
+        }
+
+        private void btnRegistros_MouseEnter(object sender, MouseEventArgs e)
+        {
+            CambiarBotonesSobre((Button)sender);
+        }
+        public void CambiarBotonesSobre(Button button)
+        {
+       
+            Color color = (Color)ColorConverter.ConvertFromString("#dedede");
+
+            button.Background = new SolidColorBrush(color);
+            button.BorderBrush = Brushes.Transparent;
+
+
+        }
+        public void CambiarBotonesDebajo(Button button)
+        {
+            button.Background = Brushes.Transparent;
+            button.BorderBrush = null;
+            button.Margin = new Thickness(0);
+            button.Padding = new Thickness(0);
+        }
+
     }
 }

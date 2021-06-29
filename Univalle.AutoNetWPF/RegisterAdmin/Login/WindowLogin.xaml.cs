@@ -80,20 +80,20 @@ namespace Univalle.AutoNetWPF
                         
                         
                        
-                        if(dt.Rows[0][3].ToString().Equals(dt.Rows[0][4].ToString()))
+                        /*if(dt.Rows[0][3].ToString().Equals(dt.Rows[0][4].ToString()))
                         {
                             ChangePassword changePassword = new ChangePassword();
                             changePassword.Show();
                             this.Close();
                         }
                         else
-                        {
+                        {*/
                             /*MainWindow mainWindow = new MainWindow();
                             mainWindow.Show();*/
                             WindowTime windowTime = new WindowTime();
                             windowTime.Show();
                             this.Close();
-                        }
+                        /*}*/
                        
                     }
                     else
