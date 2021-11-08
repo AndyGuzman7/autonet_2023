@@ -14,6 +14,24 @@
              TextOptions.TextRenderingMode="Auto"
              
              FontFamily="Montserrat Regular" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <!-- DataGrid style -->
+        <Style x:Key="DataGridStyle1" TargetType="{x:Type DataGrid}">
+            <Setter Property="ColumnHeaderStyle" Value="{DynamicResource ColumnHeaderStyle1}"/>
+        </Style>
+        <!-- DataGridColumnHeader style -->
+        <Style x:Key="ColumnHeaderStyle1" x:Name="sssss" TargetType="DataGridColumnHeader">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Foreground" Value="Blue"/>
+            <Setter Property="FontSize" Value="18" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="ToolTip" Value="Click to sort."/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
     <Grid>
 
         <materialDesign:TransitioningContent>
@@ -54,12 +72,12 @@
                                                 <Grid VerticalAlignment="Center">
                                                     <materialDesign:PackIcon  Kind="Search" Opacity=".56" />
                                                 </Grid>
-                                                <TextBox Grid.Column="1" Margin="8 0 0 0"  materialDesign:HintAssist.Hint="Buscar Repuestos" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0" MinWidth="200" VerticalAlignment="Center" />
+                                                <TextBox x:Name="txtNombreBuscar" Grid.Column="1" Margin="8 0 0 0"  materialDesign:HintAssist.Hint="Buscar Repuestos" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0" MinWidth="200" VerticalAlignment="Center" TextChanged="txtNombreBuscar_TextChanged" />
                                                 
                                             </Grid>
                                         </materialDesign:ColorZone>
-                                        <Button Style="{DynamicResource MaterialDesignToolForegroundButton}" Margin="8 0 0 0"  Panel.ZIndex="0">
-                                            <materialDesign:PackIcon  Kind="Send" />
+                                        <Button Style="{DynamicResource MaterialDesignToolForegroundButton}" Margin="8 0 0 0"  Panel.ZIndex="0" Name="btnBuscar" Click="btnBuscar_Click">
+                                            <materialDesign:PackIcon  Kind="Send"/>
                                         </Button>
                                     </StackPanel>
                                 
@@ -73,9 +91,25 @@
                             <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible">
                                 <Grid x:Name="gridParts"  VerticalAlignment="Top" >
                                     <WrapPanel Margin="20,0,20,20" HorizontalAlignment="Center">
-                                        <DataGrid AutoGenerateColumns="True" Name="dataGridProgram" SelectionMode="Single" 
-              FontSize="15" BorderThickness="1" IsReadOnly="true" Height="auto" 
-              Width="700"/>
+                                        <DataGrid AutoGenerateColumns="False" Background="White"  Name="dataGridProgram" SelectionMode="Single"  FontSize="15"  IsReadOnly="true" Height="auto"  Width="700"  CanUserAddRows="False" ScrollViewer.CanContentScroll="True" >
+                                            
+                                            <DataGrid.Columns >
+                                                <DataGridTextColumn  Width="*"  Header="Id Cliente"  Binding="{Binding Path='idSpare'}" Visibility="Collapsed" />
+
+                                                <DataGridTextColumn x:Name="dtdd" Width="*"  Header="Nombre Repuesto"  Binding="{Binding Path='nameProduct'}"/>
+
+                                                <DataGridTextColumn Width="*" Header="Precio" Binding="{Binding Path='basePrice'}"/>
+                                                <DataGridTextColumn Width="*" Header="Stock"  Binding="{Binding Path='currentBalance'}"/>
+                                                <DataGridTemplateColumn Header="Vista">
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <Button Name="btnVistaProducto" Height="40" Content="Detalles" Click="btnVistaProducto_Click" Background="Green"  BorderBrush="{x:Null}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+
+                                            </DataGrid.Columns>
+                                        </DataGrid>
                                     </WrapPanel>
                                 </Grid>
                             </ScrollViewer>

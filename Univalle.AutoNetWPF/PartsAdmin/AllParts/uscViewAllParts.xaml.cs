@@ -43,33 +43,66 @@ namespace Univalle.AutoNetWPF.PartsAdmin
             
         }
 
-        public  void LoadData()
+        DataTable SelectSpare()
         {
             DataTable dt = new DataTable();
-           /* try
-            {*/
-                spareImpl = new SpareImpl();
-                DataTable dataTable = spareImpl.Select();
-                int height = (int)SystemParameters.PrimaryScreenHeight;
-              
-                int width = (int)SystemParameters.PrimaryScreenWidth;
-                dataGridProgram.Width = width - 20;
-                dataGridProgram.Height = height - 20;
-               // dataGridProgram.Visibility = Visibility.Hidden;
-                
-                dataGridProgram.ItemsSource = dataTable.AsDataView();
-            dataGridProgram.Columns[2].Visibility = Visibility.Collapsed;
-                //CrearColumansFila(LlenarLista(dataTable).Count);
-            /*}
-            catch(Exception ex)
+            try
             {
-                MessageBox.Show(ex.Message);
-            }*/
-            
-                
-                
+                spareImpl = new SpareImpl();
+                dt = spareImpl.Select();
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Comuniquese con el encargado de Sistemas");
+            }
+            return dt;
+        }
 
+        public  void LoadData()
+        {
+            int height = (int)SystemParameters.PrimaryScreenHeight;
+            int width = (int)SystemParameters.PrimaryScreenWidth;
+            dataGridProgram.Width = width - 200;
+            dataGridProgram.Height = height - 20;
+
+            TextBlock textBlock = new TextBlock();
+            textBlock.Text = "Nombre Repuesto";
+            textBlock.FontFamily = new FontFamily("Motserrat");
+            textBlock.FontSize = 17;
+            textBlock.Margin = new Thickness(5);
+            textBlock.VerticalAlignment = VerticalAlignment.Center;
+
+            MaterialDesignThemes.Wpf.PackIcon packIcon = new MaterialDesignThemes.Wpf.PackIcon();
+            packIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.Nut;
+            packIcon.Foreground = Brushes.Blue;
+            packIcon.Margin = new Thickness(5);
+            packIcon.Width = 17;
+            packIcon.Height = 17;
+            packIcon.VerticalAlignment = VerticalAlignment.Center;
+
+            StackPanel st1 = new StackPanel();
+           
+            st1.Children.Add(packIcon);
+            st1.Children.Add(textBlock);
+            st1.Orientation = Orientation.Horizontal;
+
+            st1.VerticalAlignment = VerticalAlignment.Center;
+
+
+            dtdd.Header = st1;
             
+            dataGridProgram.ItemsSource = SelectSpare().AsDataView();
+            //dataGridProgram.Columns[2].Visibility = Visibility.Collapsed;
+            //CrearColumansFila(LlenarLista(dataTable).Count);  
+        }
+        public void LoadDataLike(DataTable dt)
+        {
+            int height = (int)SystemParameters.PrimaryScreenHeight;
+            int width = (int)SystemParameters.PrimaryScreenWidth;
+            dataGridProgram.Width = width - 200;
+            dataGridProgram.Height = height - 20;
+            dataGridProgram.ItemsSource = dt.AsDataView();
             
         }
 
@@ -267,6 +300,81 @@ Fila2";
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             LoadData();
+        }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            SelectLike();
+        }
+
+        public void SelectLike()
+        {
+                DataTable dt = new DataTable();
+                try
+                {
+                    spareImpl = new SpareImpl();
+                    dt = spareImpl.SelectLike(txtNombreBuscar.Text);
+                    dataGridProgram.ItemsSource = dt.DefaultView;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Comuniquese con el encargado de sistemas");
+                }
+            
+            
+        }
+
+        private void txtNombreBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SelectLike();
+        }
+
+        private void Style_BadgeChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+
+        }
+
+        private void btnView_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAñadirMas_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAñadirMenos_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnVistaProducto_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DataRowView dataRowView = (DataRowView)((Button)e.Source).DataContext;
+                List<Spare> ls = LlenarLista(SelectSpare());
+                foreach (var item in ls)
+                {
+                    if(item.IdSpare == int.Parse(dataRowView[0].ToString()))
+                    {
+                        ViewParts viewParts = new ViewParts(item);
+                        viewParts.recargarPagina += LoadData;
+                        viewParts.ShowDialog();
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }

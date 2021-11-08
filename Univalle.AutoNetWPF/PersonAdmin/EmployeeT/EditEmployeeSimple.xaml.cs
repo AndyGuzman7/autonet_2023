@@ -46,6 +46,7 @@ namespace Univalle.AutoNetWPF.PersonAdmin.EmployeeT
                 employeee.Password = txtPassword.Password;
                 employeee.Phone = int.Parse(txtTelefono.Text);
                 employeee.UserType = cmbTipoUsuario.Text;
+
                 employeeImpl = new EmployeeImpl();
                 int res = employeeImpl.Update(employeee);
                 if (res > 0)

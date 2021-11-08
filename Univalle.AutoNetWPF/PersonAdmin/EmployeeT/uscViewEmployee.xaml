@@ -122,7 +122,27 @@
                         </StackPanel>
                     </StackPanel>-->
                 </Border>
-
+                <materialDesign:DialogHost Name="DialogoHost1" BorderBrush="{DynamicResource MaterialDesignDivider}">
+                    <materialDesign:DialogHost.DialogContent>
+                        <Grid >
+                            <Border CornerRadius="15" Width="300" Height="150" HorizontalAlignment="Center" Background="White" >
+                                <Grid  >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Text="¿Desea Eliminar el cliente?"/>
+                                    <Button x:Name="btnCancelarEliminarCliente" Grid.Row="1" Content="Cancelar" Margin="10" BorderBrush="#FF17950A" Background="#FF1A6C08"/>
+                                    <Button x:Name="btnEliminarCliente" Grid.Row="1" Content="Eliminar" Margin="10" Grid.Column="1" Background="#FFDA1F1F" BorderBrush="#FFAC0B0B"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </materialDesign:DialogHost.DialogContent>
+                </materialDesign:DialogHost>
             </Grid>
         </materialDesign:TransitioningContent>
     </Grid>

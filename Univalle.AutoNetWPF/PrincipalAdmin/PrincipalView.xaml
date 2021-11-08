@@ -165,7 +165,22 @@
                             </Menu>
                             <Grid x:Name="gridM5" Margin="10 0 10 5" Background="#FF6F8190" Height="2" Visibility="Collapsed" />
                         </StackPanel>
+                        
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
 
+                            <Menu  Background="White" VerticalContentAlignment="Center" Padding="0"  BorderBrush="{x:Null}">
+                                <MenuItem  FontFamily="Montserrat Regular" Background="White" Foreground="Black" Icon="{materialDesign:PackIcon Kind =Abacus}" TextBlock.TextAlignment="Left" Header="Otros" Height="50"  Padding="10"       FontSize="13" >
+                                    <MenuItem  Foreground="Black"  Header="Proveedores"/>
+                                    <Separator/>
+                                    <MenuItem Name="btnLayoutFabricaRepuestos"  Foreground="Black"  Header="Fabricas de Repuestos" Click="btnLayoutFabricaRepuestos_Click"/>
+                                    <Separator/>
+                                    <MenuItem Foreground="Black"  Header="Categoria de respuestos" />
+
+                                </MenuItem>
+
+                            </Menu>
+                           
+                        </StackPanel>
 
 
 

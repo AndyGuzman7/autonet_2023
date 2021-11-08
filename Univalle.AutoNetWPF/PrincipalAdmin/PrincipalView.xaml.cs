@@ -16,10 +16,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Univalle.AutoNetWPF.FactoryAdmin;
 using Univalle.AutoNetWPF.Login;
+using Univalle.AutoNetWPF.Ventas.HacerVenta;
+using Univalle.AutoNetWPF.Ventas.ListaVentas;
 
 namespace Univalle.AutoNetWPF
 {
+    public delegate void HacerVentaEvent();
+    
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
@@ -28,8 +33,8 @@ namespace Univalle.AutoNetWPF
         public MainWindow()
         {
             InitializeComponent();
-            PartsAdmin.uscParts.activar += ActivarVentanaEdicion;
-            PersonasAdmin.uscClient.añadirCliente += ActivarVentanaEdicionEmpleado;
+            /*PartsAdmin.uscParts.activar += ActivarVentanaEdicion;
+            PersonasAdmin.uscClient.añadirCliente += ActivarVentanaEdicionEmpleado;*/
 
         }
        public void metrodget()
@@ -165,7 +170,35 @@ namespace Univalle.AutoNetWPF
 
         private void btnRegistros_Click(object sender, RoutedEventArgs e)
         {
-            CambiarBotones(4);
+            ViewListaVentas();
+        }
+
+        public void ViewListaVentas()
+        {
+            UserControl usc = null;
+            gridMain.Children.Clear();
+            usc = new uscListaVentas();
+            uscListaVentas uscListaVentas = new uscListaVentas();
+            if (usc != null)
+            {
+                uscListaVentas.hacerVentaEvent += HacerVenta;
+                gridMain.Children.Add(uscListaVentas);
+                CambiarBotones(4);
+                txbNamePage.Text = "Lista de Ventas";
+            }
+        }
+
+        public void HacerVenta()
+        {
+            uscHacerVenta uscHacerVenta = new uscHacerVenta();
+            gridMain.Children.Clear();
+            if (uscHacerVenta != null)
+            {
+                uscHacerVenta.listaVentas += ViewListaVentas;
+                gridMain.Children.Add(uscHacerVenta);
+                CambiarBotones(4);
+                txbNamePage.Text = "Realizar un venta";
+            }
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -357,5 +390,22 @@ namespace Univalle.AutoNetWPF
             button.Padding = new Thickness(0);
         }
 
+        private void btnLayoutFabricaRepuestos_Click(object sender, RoutedEventArgs e)
+        {
+            LayoutFabricaMarca();
+        }
+
+        public void LayoutFabricaMarca()
+        {
+            UserControl usc = null;
+            gridMain.Children.Clear();
+            usc = new uscViewAllFactory(); 
+            if (usc != null)
+            {
+                gridMain.Children.Add(usc);
+                CambiarBotones(1);
+                txbNamePage.Text = "Marca o Fabrica del Producto";
+            }
+        }
     }
 }

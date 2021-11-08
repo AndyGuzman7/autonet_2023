@@ -22,17 +22,21 @@
         <Grid Opacity="0.5" Background="Black">
 
         </Grid>
-        <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth5" Height="750" Width="780" UniformCornerRadius="15" >
+        <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth5" Height="650" Width="780" UniformCornerRadius="15" >
             <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect ExpandIn}">
                 <Grid  Width="auto" Height="auto"  >
-                    <Border CornerRadius="15" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        
+                    </Grid.ColumnDefinitions>
+                    <Border CornerRadius="15" Grid.Column="0" >
                         <Grid >
                             <Grid.ColumnDefinitions>
 
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Border  Margin="0 80 0 0" Padding="15" materialDesign:ShadowAssist.ShadowDepth="Depth3" Grid.Column="2" CornerRadius=" 0 15 15 0" Background="#F7F7F7">
+                            <Border  Margin="0 80 0 0" Padding="15" materialDesign:ShadowAssist.ShadowDepth="Depth3" Grid.Column="0" CornerRadius=" 0 15 15 0" Background="#F7F7F7">
 
                                 <StackPanel >
                                     <materialDesign:Card Background="white" UniformCornerRadius="15" Padding="10" Margin="5">
@@ -76,21 +80,7 @@
 
 
 
-                                    <materialDesign:Card Background="white" UniformCornerRadius="15" Padding="10" Margin="5">
-                                        <Grid  >
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="*"/>
-                                            </Grid.ColumnDefinitions>
-
-                                            <TextBox x:Name="txtSaldoActual" Grid.Column="0"  materialDesign:HintAssist.Hint="SaldoActual" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="#F7F7F7" Width="auto" BorderBrush="{x:Null}"/>
-                                            <TextBox x:Name="txtPrecioBase" Grid.Column="1" materialDesign:HintAssist.Hint="Precio Base" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="#F7F7F7" Width="auto" BorderBrush="{x:Null}"/>
-                                            <TextBox x:Name="txtPeso" Grid.Column="2" materialDesign:HintAssist.Hint="Peso" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="#F7F7F7" Width="auto" BorderBrush="{x:Null}"/>
-
-                                        </Grid>
-
-                                    </materialDesign:Card>
+                                    
                                     <materialDesign:Card Background="white" UniformCornerRadius="15" Padding="10" Margin="5">
                                         <StackPanel>
 
@@ -121,6 +111,47 @@
 
                                 </StackPanel>
                             </Border>
+                            <Border  Margin="0 80 0 0" Padding="15" materialDesign:ShadowAssist.ShadowDepth="Depth3" Grid.Column="1" CornerRadius=" 0 15 15 0" Background="#F7F7F7">
+
+                                <StackPanel >
+                                    
+                                    <TextBlock Margin="10" Visibility="Collapsed" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Acerca del Proveedor"/>
+                                    
+                                    <materialDesign:Card Background="white" Visibility="Collapsed" UniformCornerRadius="15" Padding="10" Margin="5">
+                                        <StackPanel>
+                                            <ComboBox Margin="5" x:Name="cmbTipoUsuario"  materialDesign:HintAssist.Hint="Nombre Proveedor"  Style="{StaticResource MaterialDesignFilledComboBox}" IsEnabled="{Binding Path=IsChecked, ElementName=FilledComboBoxEnabledCheckBox}"/>
+                                        </StackPanel>
+                                    </materialDesign:Card>
+                                    <TextBlock Margin="10" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Datos de Compra"/>
+
+
+
+
+                                    <materialDesign:Card Background="white" UniformCornerRadius="15" Padding="10" Margin="5">
+                                        <Grid  >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                               
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+
+                                            <TextBox x:Name="txtSaldoActual" Grid.Column="0" Margin="0 10"  materialDesign:HintAssist.Hint="SaldoActual" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="#F7F7F7" Width="auto" BorderBrush="{x:Null}"/>
+                                            <TextBox x:Name="txtPrecioBase" Grid.Row="1" Grid.Column="1" Margin="0 10" materialDesign:HintAssist.Hint="Precio Base" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="#F7F7F7" Width="auto" BorderBrush="{x:Null}"/>
+                                            <TextBox x:Name="txtPeso" Grid.Column="2" Grid.Row="2" Margin="0 10" materialDesign:HintAssist.Hint="Peso" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="#F7F7F7" Width="auto" BorderBrush="{x:Null}"/>
+
+                                        </Grid>
+
+                                    </materialDesign:Card>
+                                   
+
+
+
+                                </StackPanel>
+                            </Border>
 
                             <Border Padding="15" Grid.ColumnSpan="2" CornerRadius="15 0 0 15">
                                 <!--<Border.Background>
@@ -146,6 +177,7 @@
                             </Border>
                         </Grid>
                     </Border>
+                   
                 </Grid>
             </materialDesign:TransitioningContent>
         </materialDesign:Card>

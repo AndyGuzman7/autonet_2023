@@ -11,6 +11,8 @@ namespace DAO.Model
 
         #region Properties
 
+        public int Quantity { get; set; }
+        public double Total { get; set; }
         public int IdSpare { get; set; }
         public string Description { get; set; }
         public string NameProduct { get; set; }
@@ -57,6 +59,8 @@ namespace DAO.Model
             ProductCode = productCode;
             IdFactory = idFactory;
             IdSpareType = idSpareType;
+            Quantity++;
+            Total = Quantity * BasePrice;
         }
 
         /// <summary>
@@ -86,6 +90,21 @@ namespace DAO.Model
 
 
 
+
+        #endregion
+
+        # region Methods
+
+        public void MasCantidad()
+        {
+            Quantity++;
+            Total = Quantity * BasePrice;
+        }
+        public void MenosCantidad()
+        {
+            Quantity--;
+            Total = Quantity * BasePrice;
+        }
 
         #endregion
     }

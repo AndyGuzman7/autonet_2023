@@ -44,10 +44,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IClient.cs" />
     <Compile Include="IDao.cs" />
+    <Compile Include="IFactory.cs" />
+    <Compile Include="IOrder.cs" />
+    <Compile Include="IOrderSpare.cs" />
     <Compile Include="ISpare.cs" />
     <Compile Include="ISpareType.cs" />
     <Compile Include="IEmployee.cs" />
+    <Compile Include="ISuppliers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

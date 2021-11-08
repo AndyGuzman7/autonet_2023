@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using Strategys;
 
 namespace DAO.Implementacion
 {
     class DataBase
     {
-        private static string connectionString = @"data source = localhost\SQLEXPRESS; initial catalog = BDDAUTONET; user id= root; password=Univalle2";
+        
+        private static string connectionString = @"data source = localhost\SQLEXPRESS; initial catalog = BDDAUTONET; user id= root; password=Univalle";
         public static SqlCommand CreateBasicCommand()
         {
             SqlConnection connection = new SqlConnection(connectionString);
@@ -102,6 +104,69 @@ namespace DAO.Implementacion
             }
             //no nesecita un finally porque lee uno por uno
             return dr;
+        }
+
+
+        public static void ExecutenBasicCommand(List<SqlCommand> commands)
+        {
+            SqlTransaction sqlTransaction = null;
+            SqlCommand sqlCommand1 = commands[0];
+
+            try
+            {
+                sqlCommand1.Connection.Open();
+                sqlTransaction = sqlCommand1.Connection.BeginTransaction();
+
+                foreach (SqlCommand item in commands)
+                {
+                    item.Transaction = sqlTransaction;
+                    item.ExecuteNonQuery();
+                }
+                sqlTransaction.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                sqlTransaction.Rollback();
+                throw ex;
+            }
+        }
+        public static string GetGenerateIDTable(string tableName)
+        {
+            string res = "";
+            string query = $@"SELECT IDENT_CURRENT('{tableName}') + IDENT_INCR('{tableName}')";
+            SqlCommand sqlCommand = CreateBasicCommand(query);
+            try
+            {
+                sqlCommand.Connection.Open();
+                res = sqlCommand.ExecuteScalar().ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                sqlCommand.Connection.Close();
+            }
+
+            return res;
+        }
+
+
+        public static List<SqlCommand> CreateBasciComand(int n)
+        {
+            List<SqlCommand> res = new List<SqlCommand>();
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            for (int i = 0; i < n; i++)
+            {
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = sqlConnection;
+                res.Add(sqlCommand);
+            }
+            return res;
+
+
         }
 
     }

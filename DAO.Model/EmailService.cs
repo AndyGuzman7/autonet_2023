@@ -12,7 +12,7 @@ namespace DAO.Model
     public static class EmailService
     {
         public static event CambiarPantalla cambiarPantalla;
-        private static string contraseñaGmail = "AUTOnet117";
+        private static string contraseñaGmail = "AUTOnet1172021";
         public static bool  EnviarCorreoContraña(string contraseña, string email)
         {
             bool llave = false;
@@ -62,7 +62,7 @@ namespace DAO.Model
             {
                 Task.Run(() =>
                 {
-                    smtp.Send(ms);
+                        smtp.Send(ms);
                     ms.Dispose();
                     if (cambiarPantalla != null)
                     {

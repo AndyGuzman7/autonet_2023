@@ -10,5 +10,6 @@ namespace DAO.Interfaces
 {
     public interface ISpare : IDao<Spare>
     {
+        DataTable SelectLike(string cadenaBuscar);
     }
 }

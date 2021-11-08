@@ -26,10 +26,10 @@ namespace Univalle.AutoNetWPF.PersonasAdmin
     public delegate void Activar();
     public partial class uscEmployee : UserControl
     {
-        
+
         EmployeeImpl employeeImpl;
         SpareImpl spareImpl;
-        
+
         Spare spare;
         Employeee employee;
         List<Spare> spares;
@@ -46,12 +46,12 @@ namespace Univalle.AutoNetWPF.PersonasAdmin
         }
         public void LoadData()
         {
-           
-                employeeImpl = new EmployeeImpl();
-                DataTable dataTable = employeeImpl.Select();
 
-                CrearColumansFila(LlenarLista(dataTable).Count);
-            
+            employeeImpl = new EmployeeImpl();
+            DataTable dataTable = employeeImpl.Select();
+
+            CrearColumansFila(LlenarLista(dataTable).Count);
+
 
 
 
@@ -65,28 +65,39 @@ namespace Univalle.AutoNetWPF.PersonasAdmin
             employees = new List<Employeee>();
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
-                employees.Add(new Employeee(byte.Parse(dataTable.Rows[i][0].ToString()),//IDEMPLOYE
-                                        dataTable.Rows[i][1].ToString(),   //NAMEUSER
-                                        dataTable.Rows[i][2].ToString(), //PASSWORD
-                                        dataTable.Rows[i][3].ToString(),//IDUSERTYPE
-                                        dataTable.Rows[i][8].ToString(), // firstname
-                                        dataTable.Rows[i][9].ToString(), //lastname
-                                        DateTime.Parse(dataTable.Rows[i][10].ToString()), // birthdate
-                                        dataTable.Rows[i][11].ToString(), // addrees
-                                        int.Parse(dataTable.Rows[i][12].ToString()), //phone
-                                        dataTable.Rows[i][13].ToString(), //gender
-                                        dataTable.Rows[i][14].ToString(), //email
-                                        byte.Parse(dataTable.Rows[i][5].ToString()), //status
-                                        DateTime.Parse(dataTable.Rows[i][6].ToString()), // resgis
-                                        DateTime.Parse(dataTable.Rows[i][7].ToString()),
-                                        short.Parse(dataTable.Rows[i][4].ToString()), //idemploye
-                                        dataTable.Rows[i][15].ToString()
-
-                                        ));
+                employees.Add(new Employeee(byte.Parse(dataTable.Rows[i][0].ToString()),
+                                            dataTable.Rows[i][1].ToString(),
+                                            dataTable.Rows[i][2].ToString(),
+                                            dataTable.Rows[i][3].ToString(),
+                                            short.Parse(dataTable.Rows[i][4].ToString()),
+                                            byte.Parse(dataTable.Rows[i][5].ToString()),
+                                            DateTime.Parse(dataTable.Rows[i][6].ToString()),
+                                            DateTime.Parse(dataTable.Rows[i][7].ToString()),
+                                            dataTable.Rows[i][8].ToString(),
+                                            dataTable.Rows[i][9].ToString(),
+                                            DateTime.Parse(dataTable.Rows[i][10].ToString()),
+                                            dataTable.Rows[i][11].ToString(),
+                                            int.Parse(dataTable.Rows[i][12].ToString()),
+                                            dataTable.Rows[i][13].ToString(),
+                                            dataTable.Rows[i][14].ToString(),
+                                            dataTable.Rows[i][15].ToString(),
+                                            float.Parse(dataTable.Rows[i][16].ToString()),
+                                            float.Parse(dataTable.Rows[i][15].ToString()),
+                                            dataTable.Rows[i][17].ToString()
+                                            )); //ci
             }
             return employees;
         }
 
+        /* <MenuItem Name="btnMasTardeHoy" Icon="{materialDesign:PackIcon Kind=ClockOut}"  Foreground="Black"  Header="Mas tarde hoy" Click="btnMasTardeHoy_Click"/>
+                                                        <Separator/>
+                                                        <MenuItem Name="btnMañanaAviso" Icon="{materialDesign:PackIcon Kind=ClockCheckOutline}" Foreground="Black" Header="Mañana 09:00"  Click="btnMañanaAviso_Click" />
+                                                        <Separator/>
+                                                        <MenuItem Name="btnProximaSemanaAviso" Icon="{materialDesign:PackIcon Kind=ClockArrow}" Header="Proxima semana 09:00"  Foreground="Black" Click="btnProximaSemanaAviso_Click"   />
+                                                        <Separator/>
+                                                        <MenuItem Name="btnEscogerFechaYHora" Icon="{materialDesign:PackIcon Kind=ClipboardClockOutline}" Header="Elegir una fecha y hora"  Foreground="Black" Click="btnEscogerFechaYHora_Click" />
+                                                        
+*/
 
         public void Editar()
         {
@@ -135,7 +146,7 @@ namespace Univalle.AutoNetWPF.PersonasAdmin
             }
 
 
-            AñadirContenido(count, columnJ, cantidaProducto );
+            AñadirContenido(count, columnJ, cantidaProducto);
         }
         public void AñadirContenido(int cantfila, int cantColumnas, int cantidadComponentes)
         {
@@ -169,12 +180,12 @@ namespace Univalle.AutoNetWPF.PersonasAdmin
             //Image image = new Image();
             //image.Source = new BitmapImage(new Uri("pack://application:,,,/PartsAdmin/rodamientos.png"));
             //myBrush.ImageSource = image.Source;
-            
+
             for (int i = 0; i < cant; i++)
             {
                 buttons[i] = new Button();
                 buttons[i].Name = listaEmployee[i].NameUser;
-                buttons[i].Content = listaEmployee[i].FirstName + " " + listaEmployee[i].LastName ;
+                buttons[i].Content = listaEmployee[i].FirstName + " " + listaEmployee[i].LastName;
                 buttons[i].FontSize = 20;
                 buttons[i].Foreground = Brushes.Black;
                 buttons[i].Background = null;
@@ -192,7 +203,7 @@ namespace Univalle.AutoNetWPF.PersonasAdmin
                 image.Margin = new Thickness(10, 0, 10, 0);
                 stackPanels[i].Children.Add(image);
                 stackPanels[i].Children.Add(buttons[i]);
-                
+
                 //card[i].Background = myBrush;
                 //card[i].Background.Opacity = 0.5;
                 card[i].Content = stackPanels[i];

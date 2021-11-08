@@ -40,7 +40,7 @@
                                 </TextBlock>
                             </Border>
                         </Grid>
-                        <Border Margin="20 170 20 20 " Background="#FFF6F6F6" CornerRadius="15">
+                        <Border Visibility="Collapsed" Margin="20 170 20 20 " Background="#FFF6F6F6" CornerRadius="15">
                             <Grid>
 
                                 <Grid   >

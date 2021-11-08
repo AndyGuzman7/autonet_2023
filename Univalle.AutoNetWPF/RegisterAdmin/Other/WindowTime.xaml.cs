@@ -46,7 +46,7 @@ namespace Univalle.AutoNetWPF.Login
 
         private void Tiempo()
         {
-            int delay = 5000;
+            int delay = 3000;
             Thread.Sleep(delay);
         }
     }

@@ -180,7 +180,7 @@
                                 <Grid>
                                     <TextBlock  Style="{StaticResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Center" Padding="23" Foreground="White" Text="Area de Edicion de Empleados"  />
                                     <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0 0 10 0" >
-                                        <Button x:Name="btnGuadar"  BorderBrush="Black"  Width="60" Height="40" Foreground="Black" Background="White" HorizontalAlignment="Right"  Click="btnGuadar_Click">
+                                        <Button x:Name="btnGuadar"  BorderBrush="Black"  Width="60" Height="Auto" Foreground="Black" Background="White" HorizontalAlignment="Right"  Click="btnGuadar_Click" Margin="0,15,0,15.4">
                                             <materialDesign:PackIcon Kind="ContentSave"/>
                                         </Button>
                                         <Button x:Name="btnSalir" Margin="10 0 10 0 " BorderBrush="Black" Width="60" Height="40" Foreground="Black" Background="White"   Click="btnSalir_Click">

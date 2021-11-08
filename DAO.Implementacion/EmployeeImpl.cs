@@ -7,33 +7,44 @@ using DAO.Model;
 using DAO.Interfaces;
 using System.Data;
 using System.Data.SqlClient;
+using Strategys;
 
 namespace DAO.Implementacion
 {
     public class EmployeeImpl : IEmployee
     {
+        LogWrite logWrite = new LogWrite("EmployeeImpl", Session.IdSession);
+        
         public int Delete(Employeee t)
         {
+            logWrite.NameMethod = "Delete";
+            int res = 0;
             string query = @"UPDATE Employee SET status = 0
                                 WHERE idEmployee = @idEmployye";
             try
             {
+                logWrite.MensajeInicio();
                 SqlCommand command = DataBase.CreateBasicCommand(query);
                 command.Parameters.AddWithValue("@idEmployye", t.IdEmployee);
-                return DataBase.ExecuteBasicCommand(command);
+                res = DataBase.ExecuteBasicCommand(command);
+                logWrite.MensajeFinalizado();
             }
             catch (Exception ex)
             {
-                throw ex;
+                logWrite.MensajeError(ex);
             }
+            return res;
         }
 
         public int Insert(Employeee t)
         {
+            logWrite.NameMethod = "Insert";
             string query = @"INSERT INTO Employee(nameUser, password, UserType, idEmployeAdd, firstName, lastName, birthDate, [Address], phone, gender, dateUpdate, email, ci)
                                            VALUES(@nameUser, HASHBYTES('md5',@password), @UserType, @idEmployeAdd, @firstName, @lastName, @birthDate, @Address, @phone, @gender, CURRENT_TIMESTAMP, @email, @ci)";
+            int res = 0;
             try
             {
+                logWrite.MensajeInicio();
                 SqlCommand command = DataBase.CreateBasicCommand(query);
                 command.Parameters.AddWithValue("@nameUser", t.NameUser);
                 command.Parameters.AddWithValue("@password", t.Password).SqlDbType = SqlDbType.VarChar;
@@ -49,18 +60,23 @@ namespace DAO.Implementacion
                 command.Parameters.AddWithValue("@ci", t.Ci);
 
 
-                return DataBase.ExecuteBasicCommand(command);
+                res = DataBase.ExecuteBasicCommand(command);
+                logWrite.MensajeFinalizado();
             }
             catch (Exception ex)
             {
-                throw ex;
+                logWrite.MensajeError(ex);
             }
+            return res;
         }
 
         public DataTable Login(string userName, string password)
         {
+            logWrite.NameMethod = "Login";
+            DataTable dt = new DataTable();
             try
             {
+                logWrite.MensajeInicio();
                 string query = @"SELECT idEmployee, nameUser, UserType, registrationDate, dateUpdate
                             FROM Employee
                             WHERE status = 1 AND nameUser = @nameUser AND password = HASHBYTES('md5',@password)";
@@ -68,51 +84,65 @@ namespace DAO.Implementacion
                 SqlCommand command = DataBase.CreateBasicCommand(query);
                 command.Parameters.AddWithValue("@nameUser", userName);
                 command.Parameters.AddWithValue("@password", password).SqlDbType = SqlDbType.VarChar;
-                return DataBase.ExecuteDataTableCommand(command);
+                dt = DataBase.ExecuteDataTableCommand(command);
+                logWrite.MensajeFinalizado();
             }
             catch (Exception ex)
             {
-                throw ex;
+                logWrite.MensajeError(ex);
             }
+            return dt;
         }
 
         public DataTable CompareEmail(string email)
         {
+            logWrite.NameMethod = "CompareEmail";
             string query = @"SELECT*
                             FROM Employee
                             WHERE status = 1 AND email = @email";
+            DataTable dt = new DataTable();
             try
             {
+                logWrite.MensajeInicio();
                 SqlCommand command = DataBase.CreateBasicCommand(query);
                 command.Parameters.AddWithValue("@email", email);
 
-                return DataBase.ExecuteDataTableCommand(command);
+                dt = DataBase.ExecuteDataTableCommand(command);
+                logWrite.MensajeFinalizado();
             }
             catch (Exception ex)
             {
-                throw ex;
+                logWrite.MensajeError(ex);
             }
+            return dt;
         }
 
         public DataTable Select()
         {
+            logWrite.NameMethod = "Select";
             string query = @"SELECT*
                             FROM Employee
                             WHERE status = 1";
+            DataTable dt = new DataTable();
             try
             {
+                logWrite.MensajeInicio();
                 SqlCommand command = DataBase.CreateBasicCommand(query);
 
-                return DataBase.ExecuteDataTableCommand(command);
+                dt = DataBase.ExecuteDataTableCommand(command);
+                logWrite.MensajeFinalizado();
             }
             catch (Exception ex)
             {
-                throw ex;
+                logWrite.MensajeError(ex);
             }
+            return dt;
         }
 
         public int Update(Employeee t)
         {
+            logWrite.NameMethod = "Update";
+            int res = 0;
             string query = @"UPDATE Employee SET nameUser = @nameUser,
                             password =  HASHBYTES('md5',@password),
                             UserType = @UserType,
@@ -129,6 +159,7 @@ namespace DAO.Implementacion
                             WHERE idEmployee = @idEmployee AND status = 1;";
             try
             {
+                logWrite.MensajeInicio();
                 SqlCommand command = DataBase.CreateBasicCommand(query);
                 command.Parameters.AddWithValue("@nameUser", t.NameUser);
                 command.Parameters.AddWithValue("@password", t.Password).SqlDbType = SqlDbType.VarChar;
@@ -143,65 +174,81 @@ namespace DAO.Implementacion
                 command.Parameters.AddWithValue("@email", t.Email);
                 command.Parameters.AddWithValue("@idEmployee", t.IdEmployee);
                 command.Parameters.AddWithValue("@ci", t.Ci);
-                return DataBase.ExecuteBasicCommand(command);
-               
+                res =  DataBase.ExecuteBasicCommand(command);
+                logWrite.MensajeFinalizado();
 
             }
             catch (Exception ex)
             {
-                throw ex;
+                logWrite.MensajeError(ex);
             }
+            return res;
         }
 
         public int UpdateRestorePassword(string email, string password)
         {
+            logWrite.NameMethod = "UpdateRestorePassword";
+            int res = 0;
             string query = @"UPDATE Employee SET password = HASHBYTES('md5',@password)
                             WHERE email = @email AND status = 1;";
             try
             {
+                logWrite.MensajeInicio();
                 SqlCommand command = DataBase.CreateBasicCommand(query);
                 command.Parameters.AddWithValue("@email", email);
                 command.Parameters.AddWithValue("@password", password).SqlDbType = SqlDbType.VarChar;
-                return DataBase.ExecuteBasicCommand(command);
+                res = DataBase.ExecuteBasicCommand(command);
+                logWrite.MensajeFinalizado();
             }
             catch (Exception ex)
             {
-                throw ex;
+                logWrite.MensajeError(ex);
             }
+            return res;
         }
 
         public DataTable GetId(int id)
         {
+            logWrite.NameMethod = "GetId";
+            DataTable dt = new DataTable();
             string query = @"SELECT registrationDate, dateUpdate
                             FROM Employee
                             WHERE status = 1 AND idEmployee = @idEmployee  ";
             try
             {
+                logWrite.MensajeInicio();
                 SqlCommand command = DataBase.CreateBasicCommand(query);
                 command.Parameters.AddWithValue("@idEmployee", id);
-                return DataBase.ExecuteDataTableCommand(command);
+                dt = DataBase.ExecuteDataTableCommand(command);
+                logWrite.MensajeFinalizado();
             }
             catch (Exception ex)
             {
-                throw ex;
+                logWrite.MensajeError(ex);
             }
+            return dt;
         }
 
         public int UpdatePassword(string password, int id)
         {
+            logWrite.NameMethod = "UpdatePassword";
+            int res = 0;
             string query = @"UPDATE Employee SET password = HASHBYTES('md5',@password), dateUpdate = CURRENT_TIMESTAMP
                             WHERE idEmployee = @idEmployee AND status = 1";
             try
             {
+                logWrite.MensajeInicio();
                 SqlCommand command = DataBase.CreateBasicCommand(query);
                 command.Parameters.AddWithValue("@idEmployee", id);
                 command.Parameters.AddWithValue("@password", password).SqlDbType = SqlDbType.VarChar;
-                return DataBase.ExecuteBasicCommand(command);
+                res =  DataBase.ExecuteBasicCommand(command);
+                logWrite.MensajeFinalizado();
             }
             catch (Exception ex)
             {
-                throw ex;
+                logWrite.MensajeError(ex);
             }
+            return res;
         }
     }
 }

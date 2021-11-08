@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Archivos Andy\UNIVERSIDAD\3ER-SEMESTRE\BASE DE DATOS II\PBDD_AUTONET\Univalle.AutoNet\Univalle.AutoNetWPF\obj\Debug\
+E:\Archivos Andy\UNIVERSIDAD\3ER-SEMESTRE\BASE DE DATOS II\proyecto\PBDD_AUTONET\PBDD_AUTONET\Univalle.AutoNet\Univalle.AutoNetWPF\obj\Debug\
 Univalle.AutoNetWPF
 none
 false
 DEBUG;TRACE
-E:\Archivos Andy\UNIVERSIDAD\3ER-SEMESTRE\BASE DE DATOS II\PBDD_AUTONET\Univalle.AutoNet\Univalle.AutoNetWPF\App.xaml
-23-253884278
+E:\Archivos Andy\UNIVERSIDAD\3ER-SEMESTRE\BASE DE DATOS II\proyecto\PBDD_AUTONET\PBDD_AUTONET\Univalle.AutoNet\Univalle.AutoNetWPF\App.xaml
+30-1415258654
 1484136221
-27306232773
-18-839713047
-AboutAdmin\uscAbout.xaml;HomeAdmin\uscHome.xaml;PersonAdmin\EmployeeT\AddEmployeeSimple.xaml;PersonAdmin\EmployeeT\EditEmployeeSimple.xaml;User\DataUser.xaml;RegisterAdmin\Other\WindowTime.xaml;PrincipalAdmin\PrincipalView.xaml;PartsAdmin\AllParts\AddParts.xaml;PartsAdmin\AllPartsType\AddPartsType.xaml;PartsAdmin\AllParts\EditParts.xaml;PartsAdmin\AllPartsType\EditPartsType.xaml;PartsAdmin\AllParts\uscViewAllParts.xaml;PartsAdmin\AllPartsType\uscPartsType.xaml;PartsAdmin\AllParts\ViewPartsInfo.xaml;PartsAdmin\AllPartsType\ViewsPartsType.xaml;PersonAdmin\EmployeeT\AddEmployee.xaml;PersonAdmin\EmployeeT\EditEmployee.xaml;PersonAdmin\EmployeeT\ViewEmployeeDetails.xaml;PersonAdmin\ClientT\uscClient.xaml;PersonAdmin\EmployeeT\uscViewEmployee.xaml;RegisterAdmin\RestorePassword\ChangePassword.xaml;RegisterAdmin\RestorePassword\WindowRestorePassword.xaml;RegisterAdmin\Login\WindowLogin.xaml;
+34-1450935274
+21334042484
+AboutAdmin\uscAbout.xaml;FactoryAdmin\AddFactoryxaml.xaml;FactoryAdmin\EditFactory.xaml;FactoryAdmin\uscViewAllFactory.xaml;HomeAdmin\uscHome.xaml;PersonAdmin\ClientT\AddClient.xaml;PersonAdmin\ClientT\EditClient.xaml;PersonAdmin\ClientT\ViewClientInfo.xaml;PersonAdmin\EmployeeT\AddEmployeeSimple.xaml;PersonAdmin\EmployeeT\EditEmployeeSimple.xaml;User\DataUser.xaml;RegisterAdmin\Other\WindowTime.xaml;PrincipalAdmin\PrincipalView.xaml;PartsAdmin\AllParts\AddParts.xaml;PartsAdmin\AllPartsType\AddPartsType.xaml;PartsAdmin\AllParts\EditParts.xaml;PartsAdmin\AllPartsType\EditPartsType.xaml;PartsAdmin\AllParts\uscViewAllParts.xaml;PartsAdmin\AllPartsType\uscPartsType.xaml;PartsAdmin\AllParts\ViewPartsInfo.xaml;PartsAdmin\AllPartsType\ViewsPartsType.xaml;PersonAdmin\EmployeeT\EditEmployee.xaml;PersonAdmin\EmployeeT\ViewEmployeeDetails.xaml;PersonAdmin\ClientT\uscViewAllClients.xaml;PersonAdmin\EmployeeT\uscViewEmployee.xaml;RegisterAdmin\RestorePassword\ChangePassword.xaml;RegisterAdmin\RestorePassword\WindowRestorePassword.xaml;RegisterAdmin\Login\WindowLogin.xaml;Ventas\HacerVenta\uscHacerVenta.xaml;Ventas\ListaVentas\uscListaVentas.xaml;
 
 False
 

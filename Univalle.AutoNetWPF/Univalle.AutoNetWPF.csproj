@@ -43,8 +43,13 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=4.1.0.2556, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.4.1.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Maps.MapControl.WPF">
+      <HintPath>C:\Program Files (x86)\Bing Maps WPF Control\V1\Libraries\Microsoft.Maps.MapControl.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -66,6 +71,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FactoryAdmin\AddFactoryxaml.xaml.cs">
+      <DependentUpon>AddFactoryxaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FactoryAdmin\EditFactory.xaml.cs">
+      <DependentUpon>EditFactory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FactoryAdmin\uscViewAllFactory.xaml.cs">
+      <DependentUpon>uscViewAllFactory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonAdmin\ClientT\AddClient.xaml.cs">
+      <DependentUpon>AddClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonAdmin\ClientT\EditClient.xaml.cs">
+      <DependentUpon>EditClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonAdmin\ClientT\ViewClientInfo.xaml.cs">
+      <DependentUpon>ViewClientInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PersonAdmin\EmployeeT\AddEmployeeSimple.xaml.cs">
       <DependentUpon>AddEmployeeSimple.xaml</DependentUpon>
     </Compile>
@@ -77,9 +100,6 @@
     </Compile>
     <Compile Include="RegisterAdmin\Other\WindowTime.xaml.cs">
       <DependentUpon>WindowTime.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PersonAdmin\EmployeeT\AddEmployee.xaml.cs">
-      <DependentUpon>AddEmployee.xaml</DependentUpon>
     </Compile>
     <Compile Include="PersonAdmin\EmployeeT\EditEmployee.xaml.cs">
       <DependentUpon>EditEmployee.xaml</DependentUpon>
@@ -96,11 +116,41 @@
     <Compile Include="RegisterAdmin\Login\WindowLogin.xaml.cs">
       <DependentUpon>WindowLogin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ventas\HacerVenta\uscHacerVenta.xaml.cs">
+      <DependentUpon>uscHacerVenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\ListaVentas\uscListaVentas.xaml.cs">
+      <DependentUpon>uscListaVentas.xaml</DependentUpon>
+    </Compile>
     <Page Include="AboutAdmin\uscAbout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FactoryAdmin\AddFactoryxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FactoryAdmin\EditFactory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FactoryAdmin\uscViewAllFactory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="HomeAdmin\uscHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonAdmin\ClientT\AddClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonAdmin\ClientT\EditClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonAdmin\ClientT\ViewClientInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -170,10 +220,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PersonAdmin\EmployeeT\AddEmployee.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PersonAdmin\EmployeeT\EditEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -182,7 +228,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PersonAdmin\ClientT\uscClient.xaml">
+    <Page Include="PersonAdmin\ClientT\uscViewAllClients.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -201,6 +247,14 @@
     <Page Include="RegisterAdmin\Login\WindowLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventas\HacerVenta\uscHacerVenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventas\ListaVentas\uscListaVentas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -228,8 +282,8 @@
     <Compile Include="PartsAdmin\AllPartsType\ViewsPartsType.xaml.cs">
       <DependentUpon>ViewsPartsType.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PersonAdmin\ClientT\uscClient.xaml.cs">
-      <DependentUpon>uscClient.xaml</DependentUpon>
+    <Compile Include="PersonAdmin\ClientT\uscViewAllClients.xaml.cs">
+      <DependentUpon>uscViewAllClients.xaml</DependentUpon>
     </Compile>
     <Compile Include="PersonAdmin\EmployeeT\uscViewEmployee.xaml.cs">
       <DependentUpon>uscViewEmployee.xaml</DependentUpon>
