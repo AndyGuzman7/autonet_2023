@@ -165,6 +165,19 @@
                             </Menu>
                             <Grid x:Name="gridM5" Margin="10 0 10 5" Background="#FF6F8190" Height="2" Visibility="Collapsed" />
                         </StackPanel>
+                        <Grid  >
+                            <Button x:Name="btnReportes" Height="50"  VerticalAlignment="Center"  Background="{x:Null}" BorderBrush="{x:Null}" Click="btnReportes_Click" Margin="0" Padding="0" >
+                                <StackPanel VerticalAlignment="Center" Margin="10">
+                                    <StackPanel Height="auto" Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Ballot" Margin="0 5 15 5" Foreground="Black" />
+                                        <TextBlock x:Name="txbReportes" VerticalAlignment="Center" Text="Reportes"  Margin="5" Height="auto" Foreground="Black"/>
+                                    </StackPanel>
+                                    <Grid x:Name="gridM6" Margin="10 0 10 5" Background="#FF6F8190" Height="2" Visibility="Collapsed"/>
+                                </StackPanel>
+
+
+                            </Button>
+                        </Grid>
                         
                         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
 

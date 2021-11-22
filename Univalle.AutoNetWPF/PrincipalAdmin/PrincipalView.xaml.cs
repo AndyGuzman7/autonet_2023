@@ -18,6 +18,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Univalle.AutoNetWPF.FactoryAdmin;
 using Univalle.AutoNetWPF.Login;
+using Univalle.AutoNetWPF.Reports;
 using Univalle.AutoNetWPF.Ventas.HacerVenta;
 using Univalle.AutoNetWPF.Ventas.ListaVentas;
 
@@ -405,6 +406,19 @@ namespace Univalle.AutoNetWPF
                 gridMain.Children.Add(usc);
                 CambiarBotones(1);
                 txbNamePage.Text = "Marca o Fabrica del Producto";
+            }
+        }
+
+        private void btnReportes_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            gridMain.Children.Clear();
+            usc = new UserReport();
+            if (usc != null)
+            {
+                gridMain.Children.Add(usc);
+                CambiarBotones(1);
+                txbNamePage.Text = "Reportes";
             }
         }
     }
