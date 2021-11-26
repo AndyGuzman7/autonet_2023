@@ -20,6 +20,7 @@ namespace DAO.Implementacion
             command.Connection = connection;
             return command;
         }
+        
         public static SqlCommand CreateBasicCommand(string query)
         {
             SqlConnection connection = new SqlConnection(connectionString);
@@ -133,13 +134,15 @@ namespace DAO.Implementacion
         }
         public static string GetGenerateIDTable(string tableName)
         {
-            string res = "";
-            string query = $@"SELECT IDENT_CURRENT('{tableName}') + IDENT_INCR('{tableName}')";
-            SqlCommand sqlCommand = CreateBasicCommand(query);
+            string res;
+            SqlCommand sqlCommand = new SqlCommand();
             try
             {
+                string query = $@"SELECT IDENT_CURRENT('{tableName}') + IDENT_INCR('{tableName}')";
+                sqlCommand = CreateBasicCommand(query);
                 sqlCommand.Connection.Open();
                 res = sqlCommand.ExecuteScalar().ToString();
+              
             }
             catch (Exception ex)
             {

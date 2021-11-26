@@ -103,7 +103,20 @@
                                                 <DataGridTemplateColumn Header="Vista">
                                                     <DataGridTemplateColumn.CellTemplate>
                                                         <DataTemplate>
-                                                            <Button Name="btnVistaProducto" Height="40" Content="Detalles" Click="btnVistaProducto_Click" Background="Green"  BorderBrush="{x:Null}"/>
+                                                            <Button Name="btnVistaProducto" Height="40" Content="Detalles"  Click="btnVistaProducto_Click" Background="Green"  BorderBrush="{x:Null}"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridComboBoxColumn Header="sads">
+                                                    
+                                                </DataGridComboBoxColumn>
+
+                                                <DataGridTemplateColumn Header="Combobox"  x:Name="datagridCombobox">
+                                                    <DataGridTemplateColumn.CellTemplate >
+                                                        <DataTemplate  >
+                                                            <ComboBox Name="cmbTipos"   SelectionChanged="cmbTipos_SelectionChanged" ItemsSource="{Binding ListaString}">
+                                                               
+                                                            </ComboBox>
                                                         </DataTemplate>
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>
@@ -130,5 +143,6 @@
 
             </Grid>
         </materialDesign:TransitioningContent>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="949,159,-224,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </UserControl>

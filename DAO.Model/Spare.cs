@@ -22,6 +22,7 @@ namespace DAO.Model
         public string ProductCode { get; set; }
         public int IdFactory { get; set; }
         public int IdSpareType { get; set; }
+        public List<string> ListaString { get; set; }
 
         #endregion
 
@@ -30,6 +31,41 @@ namespace DAO.Model
         {
 
         }
+
+        /// <summary>
+        /// SelectExt
+        /// </summary>
+        /// <param name="idSpare"></param>
+        /// <param name="description"></param>
+        /// <param name="nameProduct"></param>
+        /// <param name="currentBalance"></param>
+        /// <param name="basePrice"></param>
+        /// <param name="weight"></param>
+        /// <param name="productCode"></param>
+        /// <param name="idFactory"></param>
+        /// <param name="idSpareType"></param>
+        /// <param name="status"></param>
+        /// <param name="registrationDate"></param>
+        /// <param name="dateUpdate"></param>
+        /// <param name="idEmploye"></param>
+        public Spare(int idSpare, string description, string nameProduct, int currentBalance, double basePrice, double weight, string productCode, int idFactory, int idSpareType, byte status, DateTime registrationDate, DateTime dateUpdate, short idEmploye, List<string> listString)
+                     : base(status, registrationDate, dateUpdate, idEmploye)
+        {
+            IdSpare = idSpare;
+            Description = description;
+            NameProduct = nameProduct;
+            CurrentBalance = currentBalance;
+            BasePrice = basePrice;
+            Weight = weight;
+            ProductCode = productCode;
+            IdFactory = idFactory;
+            IdSpareType = idSpareType;
+            Quantity++;
+            Total = Quantity * BasePrice;
+            ListaString = listString;
+        }
+
+
 
         /// <summary>
         /// Select

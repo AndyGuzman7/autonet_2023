@@ -33,6 +33,7 @@ namespace Univalle.AutoNetWPF.PartsAdmin
         public uscParts()
         {
             InitializeComponent();
+            
         }
 
         private void btnRepuestosL_Click(object sender, RoutedEventArgs e)
@@ -61,6 +62,9 @@ namespace Univalle.AutoNetWPF.PartsAdmin
 
         public  void LoadData()
         {
+
+
+
             int height = (int)SystemParameters.PrimaryScreenHeight;
             int width = (int)SystemParameters.PrimaryScreenWidth;
             dataGridProgram.Width = width - 200;
@@ -91,8 +95,30 @@ namespace Univalle.AutoNetWPF.PartsAdmin
 
 
             dtdd.Header = st1;
-            
-            dataGridProgram.ItemsSource = SelectSpare().AsDataView();
+
+
+            var table = new DataTable();
+            table.Columns.Add("Name", typeof(string));
+            table.Columns.Add("Money", typeof(string));
+            table.Rows.Add("Hi", "100");
+            table.Rows.Add("Ki", "30");
+
+            var column = new DataGridComboBoxColumn();
+            column.ItemsSource = new List<string>() { "10", "30", "80", "100" };
+
+            dataGridProgram.ItemsSource = SelectSpare().DefaultView;
+            dataGridProgram.ItemsSource = ConvertDataTable(SelectSpare());
+            dataGridProgram.Columns.Add(column);
+            //DataContext = new List<string>() { "10", "30", "80", "100" };
+            DataTable dt = SelectSpare();
+      
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Console.WriteLine("Codigo " + dt.Rows[i]["Codigo"]);
+            }
+
+            //CollectionView collectionView = new CollectionView();
+           
             //dataGridProgram.Columns[2].Visibility = Visibility.Collapsed;
             //CrearColumansFila(LlenarLista(dataTable).Count);  
         }
@@ -103,7 +129,17 @@ namespace Univalle.AutoNetWPF.PartsAdmin
             dataGridProgram.Width = width - 200;
             dataGridProgram.Height = height - 20;
             dataGridProgram.ItemsSource = dt.AsDataView();
-            
+           
+        }
+
+        List<Spare> ConvertDataTable(DataTable dataTable)
+        {
+            List<Spare> spares = new List<Spare>();
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                spares.Add(new Spare(int.Parse(dataTable.Rows[i][0].ToString()), dataTable.Rows[i][1].ToString(), dataTable.Rows[i][2].ToString(), int.Parse(dataTable.Rows[i][3].ToString()), double.Parse(dataTable.Rows[i][4].ToString()), double.Parse(dataTable.Rows[i][5].ToString()), dataTable.Rows[i][6].ToString(), int.Parse(dataTable.Rows[i][7].ToString()), int.Parse(dataTable.Rows[i][8].ToString()), byte.Parse(dataTable.Rows[i][9].ToString()), DateTime.Parse(dataTable.Rows[i][10].ToString()), DateTime.Parse(dataTable.Rows[i][11].ToString()), short.Parse(dataTable.Rows[i][12].ToString()), new List<string>() { "10", "30", "80", "100" }));
+            }
+            return spares;
         }
 
         public List<Spare> LlenarLista(DataTable dataTable)
@@ -111,7 +147,7 @@ namespace Univalle.AutoNetWPF.PartsAdmin
             spares = new List<Spare>();
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
-                spares.Add(new Spare(int.Parse(dataTable.Rows[i][0].ToString()), dataTable.Rows[i][1].ToString(), dataTable.Rows[i][2].ToString(), int.Parse(dataTable.Rows[i][3].ToString()),double.Parse(dataTable.Rows[i][4].ToString()), double.Parse(dataTable.Rows[i][5].ToString()), dataTable.Rows[i][6].ToString(), int.Parse(dataTable.Rows[i][7].ToString()), int.Parse(dataTable.Rows[i][8].ToString()), byte.Parse(dataTable.Rows[i][9].ToString()), DateTime.Parse(dataTable.Rows[i][10].ToString()), DateTime.Parse(dataTable.Rows[i][11].ToString()), short.Parse(dataTable.Rows[i][12].ToString())));
+                spares.Add(new Spare(int.Parse(dataTable.Rows[i][0].ToString()), dataTable.Rows[i][1].ToString(), dataTable.Rows[i][2].ToString(), int.Parse(dataTable.Rows[i][3].ToString()), double.Parse(dataTable.Rows[i][4].ToString()), double.Parse(dataTable.Rows[i][5].ToString()), dataTable.Rows[i][6].ToString(), int.Parse(dataTable.Rows[i][7].ToString()), int.Parse(dataTable.Rows[i][8].ToString()), byte.Parse(dataTable.Rows[i][9].ToString()), DateTime.Parse(dataTable.Rows[i][10].ToString()), DateTime.Parse(dataTable.Rows[i][11].ToString()), short.Parse(dataTable.Rows[i][12].ToString())));
             }
             return spares;
         }
@@ -304,7 +340,11 @@ Fila2";
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            SelectLike();
+            ///SelectLike();
+            /*foreach (DataRowView item in dataGridProgram.Items)
+            {
+                Console.WriteLine(item.Row[0][""])
+            }*/
         }
 
         public void SelectLike()
@@ -351,7 +391,7 @@ Fila2";
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-
+          
         }
 
         private void btnVistaProducto_Click(object sender, RoutedEventArgs e)
@@ -375,6 +415,12 @@ Fila2";
             {
                 MessageBox.Show(ex.Message.ToString());
             }
+        }
+
+        private void cmbTipos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = (ComboBox)sender;
+            MessageBox.Show(comboBox.SelectedItem.ToString());
         }
     }
 }

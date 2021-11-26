@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IClient.cs" />
+    <Compile Include="IConfig.cs" />
     <Compile Include="IDao.cs" />
     <Compile Include="IFactory.cs" />
     <Compile Include="IOrder.cs" />

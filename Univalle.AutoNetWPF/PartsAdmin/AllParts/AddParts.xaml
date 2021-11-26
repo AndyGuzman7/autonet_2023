@@ -12,6 +12,8 @@
              Background="{x:Null}"
              TextOptions.TextFormattingMode="Ideal"
              TextOptions.TextRenderingMode="Auto"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
              
              FontFamily="{DynamicResource MaterialDesignFont}" WindowState="Maximized" Height="auto" Width="auto" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None" d:DesignWidth="849" d:DesignHeight="811">
     <!--<materialDesign:Card
@@ -42,14 +44,36 @@
                                     <materialDesign:Card Background="white" UniformCornerRadius="15" Padding="10" Margin="5">
                                         <StackPanel>
                                             <Grid Margin="5" Background="#F7F7F7" >
-                                                <Image Margin="10" Width="70" Source="/PartsAdmin/image/logo2Recurso 12logoBalnco.png" >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <StackPanel x:Name="stackPanelButtons" Visibility="Collapsed" Orientation="Vertical" Grid.Column="1" VerticalAlignment="Center">
+                                                    <Button x:Name="btnTomarFotografia" BorderBrush="{x:Null}"  Grid.Column="1" Padding="0"   Width="30" Height="30" Margin="10" Foreground="Black" Background="{x:Null}"  Click="btnTomarFotografia_Click" >
+                                                        <materialDesign:PackIcon Kind="camera" Width="30" Height="30"/>
+                                                    </Button>
+                                                    <Button x:Name="btnTomarNuevaFoto" BorderBrush="{x:Null}"  Grid.Column="1" Padding="0"   Width="30" Height="30" Margin="10" Foreground="Black" Background="{x:Null}"  Click="btnTomarNuevaFoto_Click" >
+                                                        <materialDesign:PackIcon Kind="Reload" Width="30" Height="30"/>
+                                                    </Button>
+                                                </StackPanel>
+                                              
+                                                <Image x:Name="imgSpare" Margin="10" Width="auto"  Height="150" >
 
                                                 </Image>
                                             </Grid>
 
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Button x:Name="btnAñadirImagen" Margin="5" BorderBrush="{x:Null}"   Background="#FF175CC1"   Content="Añadir de Galeria" Foreground="White" FontWeight="Normal" Click="btnAñadirImagen_Click"/>
+                                                <Button x:Name="btnAñadirImagenGaleria" Grid.Column="1" Margin="5" BorderBrush="{x:Null}"   Background="#FF175CC1"   Content="Añadir con camara" Foreground="White" FontWeight="Normal" Click="btnAñadirImagenGaleria_Click"/>
 
-                                            <Button Margin="5" BorderBrush="{x:Null}"   Background="#FF175CC1"   Content="Añadir Imagen" Foreground="White" FontWeight="Normal"/>
-                                        </StackPanel>
+                                            </Grid>
+
+
+                                           </StackPanel>
                                     </materialDesign:Card>
 
 
@@ -81,31 +105,7 @@
 
 
                                     
-                                    <materialDesign:Card Background="white" UniformCornerRadius="15" Padding="10" Margin="5">
-                                        <StackPanel>
-
-
-                                            <TextBox x:Name="txtCodigoProducto" materialDesign:HintAssist.Hint="Codigo de Producto" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="#F7F7F7" BorderBrush="{x:Null}"/>
-
-                                        </StackPanel>
-
-                                    </materialDesign:Card>
-                                    <materialDesign:Card Background="white" UniformCornerRadius="15" Padding="10" Margin="5">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="*"/>
-                                            </Grid.ColumnDefinitions>
-
-
-
-                                            <TextBox x:Name="txtMarca" materialDesign:HintAssist.Hint="Fabrica o Marca" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="#F7F7F7" BorderBrush="{x:Null}"/>
-                                            <TextBox x:Name="txtTipo" Grid.Column="1" materialDesign:HintAssist.Hint="Tipo de Repuesto" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="#F7F7F7" BorderBrush="{x:Null}"/>
-
-                                        </Grid>
-
-
-                                    </materialDesign:Card>
+                                   
 
 
 
@@ -146,7 +146,32 @@
                                         </Grid>
 
                                     </materialDesign:Card>
-                                   
+                                    <materialDesign:Card Background="white" UniformCornerRadius="15" Padding="10" Margin="5">
+                                        <StackPanel>
+
+
+                                            <TextBox x:Name="txtCodigoProducto" materialDesign:HintAssist.Hint="Codigo de Producto" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="#F7F7F7" BorderBrush="{x:Null}"/>
+
+                                        </StackPanel>
+
+                                    </materialDesign:Card>
+                                    <materialDesign:Card Background="white" UniformCornerRadius="15" Padding="10" Margin="5">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+
+
+                                            <TextBox x:Name="txtMarca" materialDesign:HintAssist.Hint="Fabrica o Marca" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="#F7F7F7" BorderBrush="{x:Null}"/>
+                                            <TextBox x:Name="txtTipo" Grid.Column="1" materialDesign:HintAssist.Hint="Tipo de Repuesto" Style="{StaticResource MaterialDesignOutlinedTextBox}" Background="#F7F7F7" BorderBrush="{x:Null}"/>
+
+                                        </Grid>
+
+
+                                    </materialDesign:Card>
+
 
 
 

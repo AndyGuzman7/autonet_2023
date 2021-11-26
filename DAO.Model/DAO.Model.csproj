@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="BaseModel.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="Config.cs" />
     <Compile Include="EmailService.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="Order.cs" />
