@@ -280,7 +280,7 @@
                                     </Grid.RowDefinitions>
                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                             <Grid x:Name="gridBuscador">
-                                                <materialDesign:ColorZone Width="500" Mode="Standard" Padding="8 4 8 4" CornerRadius="2" Panel.ZIndex="1" Margin="16 0 0 0" materialDesign:ShadowAssist.ShadowDepth="Depth1">
+                                                <materialDesign:ColorZone Width="400" Mode="Standard" Padding="8 4 8 4" CornerRadius="2" Panel.ZIndex="1" Margin="16 0 0 0" materialDesign:ShadowAssist.ShadowDepth="Depth1">
                                                     <Grid>
                                                         <Grid.ColumnDefinitions>
                                                             <ColumnDefinition  Width="Auto" />
@@ -291,12 +291,12 @@
                                                             <materialDesign:PackIcon  Kind="Search" Opacity=".56" />
                                                         </Grid>
                                                         <TextBox x:Name="txtVentaNombreClienteBuscar" Grid.Column="1" Margin="8 0 0 0"  materialDesign:HintAssist.Hint="Buscar Ciente" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0" MinWidth="200" VerticalAlignment="Center" TextChanged="txtVentaNombreClienteBuscar_TextChanged" />
-
+                                                        <Button Style="{DynamicResource MaterialDesignToolForegroundButton}" Margin="10 0 0 0"   Name="btnRegistrarCliente" Click="btnRegistrarCliente_Click" Foreground="blue">
+                                                            <materialDesign:PackIcon  Kind="PlusThick"/>
+                                                        </Button>
                                                     </Grid>
                                                 </materialDesign:ColorZone>
-                                                <Button Style="{DynamicResource MaterialDesignToolForegroundButton}" Margin="8 0 0 0"  Panel.ZIndex="0" Name="btnRegistrarCliente" Click="btnRegistrarCliente_Click" Foreground="Green">
-                                                    <materialDesign:PackIcon  Kind="PlusThick"/>
-                                                </Button>
+                                                
 
                                             </Grid>
 
