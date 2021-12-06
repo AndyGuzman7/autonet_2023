@@ -45,12 +45,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseModel.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Config.cs" />
     <Compile Include="EmailService.cs" />
+    <Compile Include="Factory.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderSpare.cs" />
     <Compile Include="Password.cs" />
     <Compile Include="Spare.cs" />
     <Compile Include="SpareType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Employeee.cs" />
+    <Compile Include="Suppliers.cs" />
     <Compile Include="UserName.cs" />
   </ItemGroup>
   <ItemGroup>

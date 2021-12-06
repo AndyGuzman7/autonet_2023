@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/autonet.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("principaladmin/image/autonet.png")]
 
 

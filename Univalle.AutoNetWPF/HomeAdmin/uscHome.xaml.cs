@@ -25,54 +25,10 @@ namespace Univalle.AutoNetWPF.HomeAdmin
             InitializeComponent();
         }
 
-        private void ButtonsDemoChip_OnDeleteClick(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonsDemoChip_OnClick(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Card_TouchEnter(object sender, TouchEventArgs e)
-        {
-           
-        }
-
-        private void Card_MouseEnter(object sender, MouseEventArgs e)
-        {
-          
-        }
-
-        private void Card_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            
-        }
-
-        private void Card_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            
-        }
-
-        private void Card_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
-        {
-           
-        }
-
+        
         private void Card_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("funciona");
-        }
-
-        private void Card_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            
-        }
-
-        private void Card_MouseLeave(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show("fuera");
         }
 
         private void card2_MouseLeave(object sender, MouseEventArgs e)

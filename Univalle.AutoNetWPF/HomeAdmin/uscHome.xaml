@@ -21,7 +21,7 @@
                 <materialDesign:TransitionEffect Kind="SlideInFromBottom" />
             </materialDesign:TransitioningContent.OpeningEffects>
             <Grid  Width="auto" Height="auto"  >
-                <Border CornerRadius="15" Background="White" >
+                <Border CornerRadius="0" Background="White" >
                     <Grid>
 
                         <Grid >
@@ -31,16 +31,16 @@
                                 <RowDefinition/>
 
                             </Grid.RowDefinitions>
-                            <Border CornerRadius="15 15 0 0" Grid.Row="0">
+                            <Border CornerRadius="0 0 0 0" Grid.Row="0">
                                 <Border.Background>
-                                    <ImageBrush ImageSource="fondo.jpg" Stretch="UniformToFill"/>
+                                    <ImageBrush ImageSource="/HomeAdmin/image/fondo.jpg" Stretch="UniformToFill"/>
                                 </Border.Background>
                                 <TextBlock Padding="20" Style="{StaticResource MaterialDesignHeadline3TextBlock}" Text="¡Saludos!" Foreground="White" >
 
                                 </TextBlock>
                             </Border>
                         </Grid>
-                        <Border Margin="20 170 20 20 " Background="#FFF6F6F6" CornerRadius="15">
+                        <Border Visibility="Collapsed" Margin="20 170 20 20 " Background="#FFF6F6F6" CornerRadius="15">
                             <Grid>
 
                                 <Grid   >
@@ -69,30 +69,30 @@
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
 
-                                        <materialDesign:Card x:Name="card1" Margin="10" UniformCornerRadius="15" TouchEnter="Card_TouchEnter" MouseLeftButtonUp="Card_MouseLeftButtonUp" MouseLeave="card1_MouseLeave" MouseEnter="card1_MouseEnter">
+                                        <materialDesign:Card x:Name="card1" Margin="10" UniformCornerRadius="15" MouseLeftButtonUp="Card_MouseLeftButtonUp" MouseLeave="card1_MouseLeave" MouseEnter="card1_MouseEnter">
                                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                                <Image Source="part2.png" Width="100" Margin="10"/>
+                                                <Image Source="/HomeAdmin/image/part2.png" Width="100" Margin="10"/>
                                                 <TextBlock Style="{StaticResource MaterialDesignBody1TextBlock}"  Text="Agregar un repuesto" />
                                             </StackPanel>
                                         </materialDesign:Card>
 
                                         <materialDesign:Card x:Name="card2" Grid.Column="1" Margin="10" UniformCornerRadius="15" MouseLeave="card2_MouseLeave" MouseEnter="card2_MouseEnter">
                                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                                <Image Source="empleado.png" Width="100" Margin="10"/>
+                                                <Image Source="/HomeAdmin/image/empleado.png" Width="100" Margin="10"/>
                                                 <TextBlock Style="{StaticResource MaterialDesignBody1TextBlock}"  Text="Agregar un Empleado" />
                                             </StackPanel>
                                         </materialDesign:Card>
 
                                         <materialDesign:Card x:Name="card3" Grid.Column="2" Margin="10" UniformCornerRadius="15" MouseEnter="card3_MouseEnter" MouseLeave="card3_MouseLeave">
                                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                                <Image Source="cliente2.png" Width="100" Margin="10"/>
+                                                <Image Source="/HomeAdmin/image/cliente2.png" Width="100" Margin="10"/>
                                                 <TextBlock Style="{StaticResource MaterialDesignBody1TextBlock}"  Text="Agregar un cliente" />
                                             </StackPanel>
                                         </materialDesign:Card>
 
                                         <materialDesign:Card x:Name="card4" Grid.Column="3" Margin="10" UniformCornerRadius="15" MouseEnter="card4_MouseEnter" MouseLeave="card4_MouseLeave">
                                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                                <Image Source="ventas.png" Width="100" Margin="10"/>
+                                                <Image Source="/HomeAdmin/image/ventas.png" Width="100" Margin="10"/>
                                                 <TextBlock Style="{StaticResource MaterialDesignBody1TextBlock}"  Text="Hacer una venta" />
                                             </StackPanel>
                                         </materialDesign:Card>
@@ -116,7 +116,7 @@
 
                                                 <Grid Grid.Row="1" Margin="10">
                                                     <Grid.Background>
-                                                        <ImageBrush ImageSource="bugias.jpg" Stretch="UniformToFill"/>
+                                                        <ImageBrush ImageSource="/HomeAdmin/image/bugias.jpg" Stretch="UniformToFill"/>
                                                     </Grid.Background>
                                                     <Grid Background="Black" VerticalAlignment="Center" Opacity="0.5" Height="70">
                                                         
@@ -133,7 +133,7 @@
                                                 </Grid>
                                                 <Grid Grid.Row="1" Grid.Column="1" Margin="10">
                                                     <Grid.Background>
-                                                        <ImageBrush ImageSource="rodamientos.jpg" Stretch="UniformToFill"/>
+                                                        <ImageBrush ImageSource="/HomeAdmin/image/rodamientos.jpg" Stretch="UniformToFill"/>
                                                     </Grid.Background>
                                                     <Grid Background="Black" VerticalAlignment="Center" Opacity="0.5" Height="70">
 
@@ -150,7 +150,7 @@
                                                 </Grid>
                                                 <Grid Grid.Row="1" Grid.Column="2" Margin="10">
                                                     <Grid.Background>
-                                                        <ImageBrush ImageSource="lla.png" Stretch="UniformToFill"/>
+                                                        <ImageBrush ImageSource="/HomeAdmin/image/lla.png" Stretch="UniformToFill"/>
                                                     </Grid.Background>
                                                     <Grid Background="Black" VerticalAlignment="Center" Opacity="0.5" Height="70">
 

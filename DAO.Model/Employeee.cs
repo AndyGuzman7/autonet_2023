@@ -20,7 +20,9 @@ namespace DAO.Model
         public string Gender { get; set; }
         public string Email { get; set; }
         public string Ci { get; set; }
-
+        public float Latitud { get; set; }
+        public float Longitud { get; set; }
+        public string Photo { get; set; }
 
         #endregion
 
@@ -44,7 +46,10 @@ namespace DAO.Model
         /// <param name="address"></param>
         /// <param name="phone"></param>
         /// <param name="gender"></param>
-        public Employeee(byte idEmployee, string nameUser, string password, string userType, string firstName, string lastName, DateTime birthDate, string address, int phone, string gender, string email, byte status, DateTime registrationDate, DateTime dateUpdate, short idEmployeeAdd, string ci)
+        public Employeee(byte idEmployee, string nameUser, string password, string userType,
+            short idEmployeeAdd, byte status, DateTime registrationDate, DateTime dateUpdate,
+            string firstName, string lastName, DateTime birthDate, string address, int phone,
+            string gender, string email,  string ci, float latitud, float longitud, string photo)
             : base(status, registrationDate, dateUpdate, idEmployeeAdd)
         {
             IdEmployee = idEmployee;
@@ -59,6 +64,9 @@ namespace DAO.Model
             Gender = gender;
             Email = email;
             Ci = ci;
+            Latitud = latitud;
+            Longitud = longitud;
+            Photo = photo;
         }
         /// <summary>
         /// Insert
@@ -75,7 +83,7 @@ namespace DAO.Model
         /// <param name="phone"></param>
         /// <param name="gender"></param>
 
-        public Employeee(string nameUser, string password, string userType, string firstName, string lastName, DateTime birthDate, string address, int phone, string gender, string email, string ci)
+        public Employeee(string nameUser, string password, string userType, short idEmployee,  string firstName, string lastName, DateTime birthDate, string address, int phone, string gender, string email, string ci, float latitud, float longitud, string photo)
         {
             NameUser = nameUser;
             Password = password;
@@ -88,6 +96,10 @@ namespace DAO.Model
             Gender = gender;
             Email = email;
             Ci = ci;
+            Latitud = latitud;
+            Longitud = longitud;
+            Photo = photo;
+            IdEmploye = idEmployee;
         }
 
 

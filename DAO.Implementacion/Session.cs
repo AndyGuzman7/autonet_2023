@@ -8,8 +8,8 @@ namespace DAO.Implementacion
 {
     public static class  Session
     {
-        public static int IdSession;
+        public static short IdSession;
         public static string SessionUserName; 
-        public static string SessionRole;       
+        public static string SessionRole;   
     }
 }
