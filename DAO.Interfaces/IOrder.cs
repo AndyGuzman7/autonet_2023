@@ -9,6 +9,6 @@ namespace DAO.Interfaces
 {
     public interface IOrder:IDao<Order>
     {
-        void InsertAvanced(Order t, List<OrderSpare> sp);
+        int InsertAvanced(Order t, List<OrderSpare> sp);
     }
 }

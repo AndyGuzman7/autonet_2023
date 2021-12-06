@@ -344,12 +344,16 @@ namespace Univalle.AutoNetWPF.Ventas.HacerVenta
     
         public void AñadirPedidoDateBdd()
         {
+            int id;
             try
             {
                 Order order = new Order(Session.IdSession, datosClienteComprador.IdClient, pagoCliente);
                 OrderImpl orderImpl = new OrderImpl();
-                orderImpl.InsertAvanced(order, orderSpares);
+                id = orderImpl.InsertAvanced(order, orderSpares);
                 NotificacionMensaje("Se Realizo una venta", 2);
+                windowsRecibo windowsRecibo = new windowsRecibo(id);
+                windowsRecibo.Show();
+                
             }
             catch (Exception ex)
             {

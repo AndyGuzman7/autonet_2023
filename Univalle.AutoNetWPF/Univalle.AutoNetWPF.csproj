@@ -128,6 +128,12 @@
       <DependentUpon>CrystalReport_reportTwo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\CrystalReport_repotThree.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_repotThree.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\UserReport.xaml.cs">
       <DependentUpon>UserReport.xaml</DependentUpon>
     </Compile>
@@ -154,6 +160,9 @@
     </Compile>
     <Compile Include="Ventas\HacerVenta\uscHacerVenta.xaml.cs">
       <DependentUpon>uscHacerVenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\HacerVenta\windowsRecibo.xaml.cs">
+      <DependentUpon>windowsRecibo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventas\ListaVentas\uscListaVentas.xaml.cs">
       <DependentUpon>uscListaVentas.xaml</DependentUpon>
@@ -292,6 +301,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Ventas\HacerVenta\windowsRecibo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ventas\ListaVentas\uscListaVentas.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -352,6 +365,10 @@
     <EmbeddedResource Include="Reports\CrystalReport_reportTwo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport_reportTwo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReport_repotThree.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_repotThree.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -57,22 +57,25 @@
                                       ToolTip="MaterialDesignFlatButton"
                                       Content="Reporte One"  Margin="20,0,10,0.4" />
                                 <Button
+                                    x:Name="btnReportTwo"
+                                    Click="btnReportTwo_Click"
                                       Style="{StaticResource MaterialDesignFlatButton}"
                                      
                                       ToolTip="MaterialDesignFlatButton"
                                       Content="Reporte Two"  Margin="20,0,10,0.4" />
                                 <Button
+                                    x:Name="btnReportTheree"
                                       Style="{StaticResource MaterialDesignFlatButton}"
-                                      
+                                      Click="btnReportTheree_Click"
                                       ToolTip="MaterialDesignFlatButton"
                                       Content="Reporte Three"  Margin="20,0,10,0.4" />
 
-                               
 
-                                
 
-                               
-                               
+
+
+
+
 
                             </StackPanel>
 
@@ -81,7 +84,7 @@
                             <my:CrystalReportsViewer x:Name="VisorDelReporte"/>
                         </Grid>
                         <Grid x:Name="gridGif" Margin=" 0 90 0 0 " Background="white" Grid.Column="0">
-                            <Image gif:ImageBehavior.AnimatedSource="/RegisterAdmin/gif/report.gif" VerticalAlignment="Bottom"/>
+                            <!--<Image gif:ImageBehavior.AnimatedSource="/RegisterAdmin/gif/report.gif" VerticalAlignment="Bottom"/>-->
                         </Grid>
 
 
@@ -90,12 +93,12 @@
 
 
                 </Border>
-                
-                   
+
+
             </Grid>
-           
-            
-            
+
+
+
         </materialDesign:TransitioningContent>
 
 
@@ -120,10 +123,83 @@
 
                             <TextBlock  Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Fecha Final"/>
                             <DatePicker Grid.Row="2" Grid.Column="1" Name="fechaFinalDT"/>
-                            
+
                             <Button x:Name="btnCancelarReporteOne" Style="{StaticResource MaterialDesignOutlinedButton}"
    Grid.Row="3" Content="Cancelar" Margin="10" BorderBrush="#145cc3" Click="btnCancelarReporteOne_Click_1"/>
                             <Button x:Name="btnReporteOne" Grid.Row="3" Content="Hacer reporte" Margin="10" Grid.Column="1" Background="#145cc3" BorderBrush="#145cc3" Click="btnReporteOne_Click"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+       
+        <materialDesign:DialogHost Name="DialogoHostTime3" BorderBrush="{DynamicResource MaterialDesignDivider}">
+            <materialDesign:DialogHost.DialogContent>
+                <Grid Margin="20">
+                    <Border CornerRadius="15" Width="650" Height="280" HorizontalAlignment="Center" Background="White" >
+                        <Grid  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" Grid.Row="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Escoja un Producto" HorizontalAlignment="Center"></TextBlock>
+                                <WrapPanel Grid.Row="1" Margin="0 20 0 0" HorizontalAlignment="Center">
+                                    <DataGrid AutoGenerateColumns="False" Background="White"  Name="dataGridProgram" SelectionMode="Single"  FontSize="15"  IsReadOnly="true" Height="auto"  CanUserAddRows="False" ScrollViewer.CanContentScroll="True" >
+
+                                        <DataGrid.Columns >
+                                            <DataGridTextColumn  Width="*"  Header="Id Cliente"  Binding="{Binding Path='idSpare'}" Visibility="Collapsed" />
+
+                                            <DataGridTextColumn x:Name="dtdd" Width="*"  Header="Nombre Repuesto"  Binding="{Binding Path='NameProduct'}"/>
+
+                                            <DataGridTemplateColumn Header="Vista">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button Name="btnAñadirProducto" Height="40" Content="Añadir"  Click="btnAñadirProducto_Click" Background="Orange"  BorderBrush="{x:Null}"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+
+
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </WrapPanel>
+                            </Grid>
+                            <StackPanel Margin="40 0 0 0" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" Grid.ColumnSpan="2">
+                                <TextBlock Text="Producto Seleccionado">
+
+                                </TextBlock>
+                                <Grid Margin="0 10" Background="#2123">
+                                    <TextBlock x:Name="txtProductSelect" Padding="10 0" Text="Sin Producto">
+
+                                    </TextBlock>
+                                </Grid>
+                            </StackPanel>
+                            <TextBlock Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Escoja las fechas para el reporte"/>
+                            <TextBlock  Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Fecha Inicio"/>
+                            <DatePicker Grid.Row="2" Grid.Column="3" Name="fechaInicioDTThree"/>
+
+                            <TextBlock  Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Fecha Final"/>
+                            <DatePicker Grid.Row="3" Grid.Column="3" Name="fechaFinalDTThree"/>
+
+                            <Button x:Name="btnCancelarReporteThree" Grid.Column="2" Style="{StaticResource MaterialDesignOutlinedButton}"
+   Grid.Row="4" Content="Cancelar" Margin="10" BorderBrush="#145cc3" Click="btnCancelarReporteThree_Click"/>
+                            <Button x:Name="btnReporteThree" Grid.Row="4" Content="Hacer reporte" Margin="10" Grid.Column="3" Background="#145cc3" BorderBrush="#145cc3" Click="btnReporteThree_Click"/>
                         </Grid>
                     </Border>
                 </Grid>

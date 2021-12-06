@@ -111,10 +111,20 @@
                                                 <DataGridTemplateColumn Header="Editar">
                                                     <DataGridTemplateColumn.CellTemplate>
                                                         <DataTemplate>
-                                                            <Button Name="btnVistaProducto" Height="40" Content="Editar"  Background="DarkBlue"  BorderBrush="{x:Null}"/>
+                                                            <Button Name="btnVistaProducto" Height="40" Content="Editar"  Background="SlateBlue"  BorderBrush="{x:Null}"/>
                                                         </DataTemplate>
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>
+
+
+                                                <DataGridTemplateColumn Header="Recibo">
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <Button Name="btnGenerarRecibo" Height="40" Content="Recibo"  Background="Green"  BorderBrush="{x:Null}" Click="btnGenerarRecibo_Click"/>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+
 
                                             </DataGrid.Columns>
                                         </DataGrid>

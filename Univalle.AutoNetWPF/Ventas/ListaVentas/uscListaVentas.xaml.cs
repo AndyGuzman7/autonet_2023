@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Univalle.AutoNetWPF.PersonAdmin.ClientT;
+using Univalle.AutoNetWPF.Ventas.HacerVenta;
 
 namespace Univalle.AutoNetWPF.Ventas.ListaVentas
 {
@@ -90,6 +91,21 @@ namespace Univalle.AutoNetWPF.Ventas.ListaVentas
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnGenerarRecibo_Click(object sender, RoutedEventArgs e)
+        {
+            GenerateRecibo(sender, e);
+
+        }
+
+
+        public void GenerateRecibo(object sender, RoutedEventArgs e)
+        {
+            DataRowView dataRowView = (DataRowView)((Button)e.Source).DataContext;
+            int idOrder = int.Parse(dataRowView["idOrder"].ToString());
+            windowsRecibo windowsRecibo = new windowsRecibo(idOrder);
+            windowsRecibo.Show();
         }
     }
 }

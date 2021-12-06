@@ -32,6 +32,13 @@ namespace DAO.Model
 
         }
 
+        public Spare(int idSpare, string nameProduct)
+        {
+            IdSpare = idSpare;
+            NameProduct = nameProduct;
+        }
+
+
         /// <summary>
         /// SelectExt
         /// </summary>

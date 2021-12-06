@@ -62,7 +62,7 @@ namespace DAO.Implementacion
             return rest;
         }
 
-        public void InsertAvanced(Order t, List<OrderSpare> sp)
+        public int InsertAvanced(Order t, List<OrderSpare> sp)
         {
             logWrite.NameMethod = "InsertAvancedTransaction";
 
@@ -108,12 +108,13 @@ namespace DAO.Implementacion
                 
                 
                 logWrite.MensajeFinalizado();
+                
             }
             catch (Exception ex)
             {
                 logWrite.MensajeError(ex);
             }
-            
+            return id;
         }
 
         public DataTable Select()

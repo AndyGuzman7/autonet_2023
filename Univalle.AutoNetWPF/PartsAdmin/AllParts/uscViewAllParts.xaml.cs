@@ -97,30 +97,9 @@ namespace Univalle.AutoNetWPF.PartsAdmin
             dtdd.Header = st1;
 
 
-            var table = new DataTable();
-            table.Columns.Add("Name", typeof(string));
-            table.Columns.Add("Money", typeof(string));
-            table.Rows.Add("Hi", "100");
-            table.Rows.Add("Ki", "30");
-
-            var column = new DataGridComboBoxColumn();
-            column.ItemsSource = new List<string>() { "10", "30", "80", "100" };
-
-            dataGridProgram.ItemsSource = SelectSpare().DefaultView;
-            dataGridProgram.ItemsSource = ConvertDataTable(SelectSpare());
-            dataGridProgram.Columns.Add(column);
-            //DataContext = new List<string>() { "10", "30", "80", "100" };
-            DataTable dt = SelectSpare();
-      
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                Console.WriteLine("Codigo " + dt.Rows[i]["Codigo"]);
-            }
-
-            //CollectionView collectionView = new CollectionView();
            
-            //dataGridProgram.Columns[2].Visibility = Visibility.Collapsed;
-            //CrearColumansFila(LlenarLista(dataTable).Count);  
+            dataGridProgram.ItemsSource = SelectSpare().DefaultView; 
+             
         }
         public void LoadDataLike(DataTable dt)
         {
